@@ -3,7 +3,7 @@
 
 <head>
     <title>Create Account</title>
-    <link rel="stylesheet" href="hospital_registration.html">
+    <link rel="stylesheet" href="hospital_registration.css">
 </head>
 
 <body>
