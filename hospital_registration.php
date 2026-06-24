@@ -4,6 +4,7 @@
 <head>
     <title>Create Account</title>
     <link rel="stylesheet" href="hospital_registration.css">
+    <link rel="stylesheet" href="style5.css">
 </head>
 
 <body>
@@ -143,17 +144,14 @@
                         <input type="tel" id="adminmobile" name="adminmobile" class="input" required>
                     </div>
 
-                    <div class="b1">
+                    <div class="Password">
                         <label for="adminpassword">Password <span style="color:red;">*</span>:</label>
                         <input type="password" id="adminpassword" name="adminpassword" class="input"
                             placeholder="Create Strong Password" required>
-                    </div>
-                    <div class="b1">
+                    
                         <label for="adminconfirmpassword">Confirm Password <span style="color:red;">*</span>:</label>
                         <input type="password" id="adminconfirmpassword" name="adminconfirmpassword" class="input"
-                            placeholder="Re-Enter Passeword" required>
-
-
+                            placeholder="Re-Enter Password" required>
                     </div>
 
 

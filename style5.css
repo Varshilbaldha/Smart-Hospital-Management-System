@@ -1,0 +1,155 @@
+/* General Page Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #eaf7ff, #f5fcff);
+    padding: 30px;
+    color: #333;
+}
+
+/* Main Container */
+.Box1 {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.Box1 h2 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+/* Form Layout */
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Individual Sections */
+.Basic,
+.Contact,
+.Address,
+.Administrator,
+.Password,
+.License {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    width: 45%;
+    min-width: 350px;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.12);
+    transition: 0.3s ease;
+}
+
+.Basic:hover,
+.Contact:hover,
+.Address:hover,
+.Administrator:hover,
+.Password:hover,
+.License:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.2);
+}
+
+/* Section Titles */
+h3 {
+    color: #0d6efd;
+    margin-bottom: 20px;
+    border-left: 5px solid #0d6efd;
+    padding-left: 10px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Inputs */
+.input,
+select,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cfd9e6;
+    border-radius: 10px;
+    background: #f8fbff;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.input:focus,
+select:focus {
+    border-color: #0d6efd;
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.2);
+}
+
+/* Address Fields */
+.Address {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.12);
+}
+
+/* Buttons */
+.submit-button {
+    background: linear-gradient(135deg, #0d6efd, #4da6ff);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #0056d2, #1f8fff);
+    transform: scale(1.05);
+}
+
+/* Submit Button Center */
+.b1:last-child {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* License Section Full Width */
+.License {
+    width: 93%;
+}
+
+/* Responsive Design */
+@media(max-width: 900px) {
+    .Basic,
+    .Contact,
+    .Address,
+    .Administrator,
+    .Password,
+    .License {
+        width: 100%;
+    }
+
+    .Box1 h2 {
+        font-size: 26px;
+    }
+}
+.Password{
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(46, 242, 108, 0.501);
+}
