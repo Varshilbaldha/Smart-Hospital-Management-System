@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_num_rows($result) == 0) {
         echo "<script>
                 alert('Username Not Found');
-                window.location.href='index.html';
+                window.location.href='login.php';
               </script>";
         exit();
     }
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 } else {
-    header("Location: index.html");
+    header("Location: index.php");
     exit();
 }
 ?>
