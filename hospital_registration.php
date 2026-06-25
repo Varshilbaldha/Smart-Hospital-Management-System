@@ -3,12 +3,61 @@
 
 <head>
     <title>Create Account</title>
-    <link rel="stylesheet" href="hospital_registration.css">
+    <!-- <link rel="stylesheet" href="hospital_registration.css"> -->
     <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+<div class="blur blur3"></div>
+
+<div class="floating-icons">
+
+    <div class="icon heart">
+        <i class="fa-regular fa-heart"></i>
+    </div>
+
+    <div class="icon stethoscope">
+        <i class="fa-solid fa-stethoscope"></i>
+    </div>
+
+    <div class="icon pulse">
+        <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+
+    <div class="icon hospital">
+        <i class="fa-solid fa-hospital"></i>
+    </div>
+
+    <div class="icon user">
+        <i class="fa-regular fa-user"></i>
+    </div>
+
+    <div class="icon plus">
+        <i class="fa-solid fa-plus"></i>
+    </div>
+
+    <div class="icon clipboard">
+        <i class="fa-regular fa-clipboard"></i>
+    </div>
+
+    <div class="icon clock">
+        <i class="fa-regular fa-clock"></i>
+    </div>
+
+    <div class="icon kit">
+        <i class="fa-solid fa-briefcase-medical"></i>
+    </div>
+
+    <div class="icon syringe">
+        <i class="fa-solid fa-syringe"></i>
+    </div>
+
+</div>
     <div class="Box1">
         <h2>Enter Your Valid Hospital Details</h2>
 

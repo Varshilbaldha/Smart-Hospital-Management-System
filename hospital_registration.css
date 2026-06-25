@@ -4,11 +4,7 @@
         margin: 0;
     
     }
-    body
-    {
-        font-family: Arial, sans-serif;
-        background-color: bisque;
-    }
+    
     .input {
         width: 300px;
         padding: 8px;
@@ -27,11 +23,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-    background: linear-gradient(135deg,#dbeafe,#eff6ff);
-    min-height:100vh;
-    padding:40px 20px;
-}
 
 .Box1{
     max-width:900px;
