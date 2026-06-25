@@ -127,7 +127,7 @@ body{
 }
 .floating-icons{
 
-position:fixed;
+position:absolute;
 
 inset:0;
 
@@ -142,9 +142,9 @@ overflow:hidden;
 
 position:absolute;
 
-width:78px;
+width:50px;
 
-height:78px;
+height:50px;
 
 display:flex;
 
@@ -164,16 +164,17 @@ box-shadow:
 
 0 10px 25px rgba(0,0,0,.08);
 
-animation:float 8s ease-in-out infinite;
+animation:float 4s ease-in-out infinite;
 
 }
-.heart{
+.icon1{
 color:#ff6b81;
 left:25px;
-top:40px;
+top:100px;
 }
 
-.stethoscope{
+
+.icon2{
 color:#f7b731;
 left:20px;
 top:220px;
@@ -237,55 +238,55 @@ transform:translateY(0px) rotate(0deg);
 
 50%{
 
-transform:translateY(-15px) rotate(5deg);
+transform:translateY(-80px) rotate(40deg);
 
 }
 
 100%{
 
-transform:translateY(0px) rotate(0deg);
+transform:translateY(-0px) rotate(0deg);
 
 }
 
 }
 .heart{
-animation-duration:8s;
+animation-duration:1s;
 }
 
 .stethoscope{
-animation-duration:11s;
+animation-duration:1s;
 }
 
 .pulse{
-animation-duration:9s;
+animation-duration:1s;
 }
 
 .hospital{
-animation-duration:10s;
+animation-duration:1s;
 }
 
 .user{
-animation-duration:12s;
+animation-duration:1s;
 }
 
 .plus{
-animation-duration:9s;
+animation-duration:1s;
 }
 
 .clipboard{
-animation-duration:13s;
+animation-duration:1s;
 }
 
 .clock{
-animation-duration:8s;
+animation-duration:1s;
 }
 
 .kit{
-animation-duration:12s;
+animation-duration:1s;
 }
 
 .syringe{
-animation-duration:10s;
+animation-duration:1s;
 }
 
 /* Section Titles */

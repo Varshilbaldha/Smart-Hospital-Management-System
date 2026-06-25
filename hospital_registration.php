@@ -17,17 +17,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="floating-icons">
 
-    <div class="icon heart">
+    <div class="icon1">
         <i class="fa-regular fa-heart"></i>
     </div>
 
-    <div class="icon stethoscope">
+    <div class="icon2">
         <i class="fa-solid fa-stethoscope"></i>
     </div>
 
     <div class="icon pulse">
         <i class="fa-solid fa-heart-pulse"></i>
     </div>
+
+    
+
 
     <div class="icon hospital">
         <i class="fa-solid fa-hospital"></i>

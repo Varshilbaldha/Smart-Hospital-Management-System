@@ -12,12 +12,12 @@
             let username = document.getElementById("username").value.trim();
             let password = document.getElementById("password").value.trim();
 
-            let usernamePattern = /^[a-zA-z0-9_]{3,15}$/;
+            let usernamePattern = /^[a-zA-Z0-9_]{3,15}$/;
             let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,20}$/;
 
             if(!usernamePattern.test(username))
         {   
-               document.getElement.GetId("msg1").innerHtml = "Enter Valid Username";
+               document.getElementById("msg1").innerHTML = "Enter Valid Username";
                  event.preventDefault();
                  return;
         }
