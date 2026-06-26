@@ -17,11 +17,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <div class="floating-icons">
 
-    <div class="icon1">
+    <div class="icon heart">
         <i class="fa-regular fa-heart"></i>
     </div>
 
-    <div class="icon2">
+    <div class="icon stethoscope">
         <i class="fa-solid fa-stethoscope"></i>
     </div>
 
@@ -59,6 +59,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="icon syringe">
         <i class="fa-solid fa-syringe"></i>
     </div>
+    
+     <div class="icon capsules">
+        <i class="fa-solid fa-capsules"></i>
+    </div>
+    <div class="icon microscope">
+        <i class="fa-solid fa-microscope"></i>
+    </div>
+    <div class="icon eye">
+        <i class="fa-solid fa-eye"></i>
+    </div>
+    <div class="icon lungs">
+        <i class="fa-solid fa-lungs"></i>
+    </div>
+    <div class="icon x-ray">
+        <i class="fa-solid fa-x-ray"></i>
+    </div>
+
+    <div class="icon prescription-bottle-medical">
+        <i class="fa-solid fa-prescription-bottle-medical"></i>
+    </div>
+    <div class="icon virus">
+        <i class="fa-solid fa-virus"></i>
+    </div>
+    <div class="icon bandage">
+        <i class="fa-solid fa-bandage"></i>
+    </div>
+    <div class="icon ambulance">
+        <i class="fa-solid fa-ambulance"></i>
+    </div>
+    <div class="icon temperature-half">
+        <i class="fa-solid fa-temperature-half"></i>
+    </div>
+    <div class="icon bacteria">
+        <i class="fa-solid fa-bacteria"></i>
+    </div>
+
+
+    
+    
+
 
 </div>
     <div class="Box1">
