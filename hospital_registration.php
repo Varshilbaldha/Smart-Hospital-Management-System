@@ -105,7 +105,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="Box1">
         <h2>Enter Your Valid Hospital Details</h2>
 
-        <form method="post" action="Get.php" onsubmit="return validation()" enctype="multipart/form-data">
+        <form method="post" action="send_mail.php" onsubmit="return validation()" enctype="multipart/form-data">
 
             <br><br>
 

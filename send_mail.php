@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$hospital_name = $_POST['hname'];
+$admin_email   = $_POST['adminemail'];
+}
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -21,10 +27,10 @@ try {
     $mail->SMTPAuth = true;
 
     // Your Gmail Address
-    $mail->Username = 'hospitalmanagement222@gmail.com';
+    $mail->Username = 'khulajasimsim7@gmail.com';
 
     // Your App Password
-    $mail->Password = 'evqnycxncsjydmgs';
+    $mail->Password = 'znfvsgzcotiiladw';
 
     // Encryption
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
@@ -34,12 +40,13 @@ try {
 
     // Sender
     $mail->setFrom(
-        'hospitalmanagement222@gmail.com',
-        'Hospital Management System'
+        'khulajasimsim7@gmail.com
+',
+        
     );
 
     // Receiver
-    $mail->addAddress('okachhadiya54@gmail.com');
+    $mail->addAddress('prithirpara52@gmail.com');
 
     // Email Format
     $mail->isHTML(true);
@@ -49,16 +56,11 @@ try {
 
     // Message
 
-    $mail->Body = '
-    <h2>Hello!</h2>
-
-    <p> hii om project ma dhyan apo khep marvanu kya karo khabar nathi padati.</p>
-
-    <h3>Hospital Management System</h3>
-    ';
+    $mail->Body = '';
     
 
     $mail->send();
+
 
     echo "Email Sent Successfully.";
 
