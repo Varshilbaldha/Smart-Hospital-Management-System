@@ -1,0 +1,7 @@
+.box {
+    cursor: grab;
+}
+
+.box:active {
+    cursor: grabbing;
+}

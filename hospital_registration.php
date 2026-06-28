@@ -3,8 +3,9 @@
 
 <head>
     <title>Create Account</title>
-    <link rel="stylesheet" href="hospital_registration.css">
+    <!-- <link rel="stylesheet" href="hospital_registration.css"> -->
     <link rel="stylesheet" href="style5.css">
+    <!-- <link rel="stylesheet" href="cursor.css"> -->
 </head>
 
 <body>

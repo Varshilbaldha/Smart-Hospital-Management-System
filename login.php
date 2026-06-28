@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="login1.css">
 </head>
 <body>
     <script>
@@ -17,7 +18,7 @@
 
             if(!usernamePattern.test(username))
         {   
-               document.getElement.GetId("msg1").innerHtml = "Enter Valid Username";
+               document.getElementById("msg1").innerHTML = "Enter Valid Username";
                  event.preventDefault();
                  return;
         }
