@@ -21,7 +21,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <div class="icon heart">
         <i class="fa-regular fa-heart"></i>
     </div>
-
+    <div class="icon heart1">
+        <i class="fa-regular fa-heart"></i>
+    </div>
     <div class="icon stethoscope">
         <i class="fa-solid fa-stethoscope"></i>
     </div>
