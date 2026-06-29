@@ -5,15 +5,21 @@
     <title>Create Account</title>
     <!-- <link rel="stylesheet" href="hospital_registration.css"> -->
     <link rel="stylesheet" href="style5.css">
-    <!-- <link rel="stylesheet" href="cursor.css"> -->
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="hospital_registration.js"></script>
 </head>
 
 <body>
 
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+<div class="blur blur3"></div>
+
     <div class="Box1">
         <h2>Enter Your Valid Hospital Details</h2>
 
-        <form method="post" action="Get.php">
+        <form method="post" action="send_mail.php" onsubmit="return validation()" enctype="multipart/form-data">
 
             <br><br>
 
@@ -34,7 +40,7 @@
                         <label for="lino">Registration/Licence No <span style="color:red;">*</span>:</label>
                         <input type="text" id="lino" name="lino" class="input" placeholder="e.g. GJ/AHM/2026/1234"
                             required>
-                    </div>
+                    </div>  
 
                     <br>
 
