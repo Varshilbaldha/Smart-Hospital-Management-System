@@ -22,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['admin_email'] = $_POST['adminemail'];
     $_SESSION['admin_mobile'] = $_POST['adminmobile'];
     $_SESSION['password'] = $_POST['adminpassword'];
-} else {
+}
+
+else {
     die("Invalid Request Method");
 
 }
@@ -114,8 +116,8 @@ $otp = rand(100000, 999999);
 // Store OTP in Session
 $_SESSION['otp'] = $otp;
 
-$_SEESION['otp_generated_time'] = time();
-$_SEESION['otp_expiry_time'] = $_SESSION['otp_generated_time'] + 900;
+$_SESSION['otp_generated_time'] = time();
+$_SESSION['otp_expiry_time'] = $_SESSION['otp_generated_time'] + 900;
 
 
 $_SESSION['application_no'] = "APP" . date("YmdHis") . rand(100, 999);
@@ -163,57 +165,127 @@ try {
     );
 
     // Receiver
-    $mail->addAddress('hiraparamargish@gmail.com');
+    $mail->addAddress($_SESSION['admin_email']);
 
-    // Email Format
-    $mail->isHTML(true);
+   
+$mail->Subject = "Hospital Registration - OTP Verification";
 
-    // Subject
-    $mail->Subject = 'Hospital Registration - OTP Verification';
+$mail->isHTML(true);
 
-    // Message
+$mail->Body = "
+<div style='max-width:700px;margin:auto;font-family:Arial,Helvetica,sans-serif;background:#f4f9fc;padding:30px;border-radius:10px;border:1px solid #d6eaf8;'>
 
-    $mail->Body = 'Dear **Administrator**,
+    <div style='text-align:center;padding-bottom:20px;border-bottom:2px solid #0d6efd;'>
+        <h1 style='color:#0d6efd;margin:0;'>🏥 Hospital Management System</h1>
+        <p style='color:#555;font-size:15px;margin-top:8px;'>
+            Smart Hospital Registration Portal
+        </p>
+    </div>
 
-Greetings from the **Hospital Management System**.
+    <br>
 
-Thank you for registering your hospital on our platform. Your registration request has been received successfully.
+    <h2 style='color:#222;'>Dear Administrator,</h2>
 
-**Registration Details**
+    <p style='font-size:16px;color:#444;line-height:1.8;'>
+        Thank you for registering your hospital with the
+        <b>Hospital Management System</b>.
+        Your registration request has been received successfully.
+    </p>
 
-* **Hospital Name:** <?= $hospital_name ?>
-* **Application Number:** <?= $application_no ?>
-* **Administrator:** <?= $admin_name ?>
-* **Administrator Email:** <?= $admin_email ?>
+    <div style='background:#ffffff;border-left:5px solid #0d6efd;padding:18px;margin:25px 0;border-radius:8px;'>
 
-### One-Time Password (OTP)
+        <h3 style='margin-top:0;color:#0d6efd;'>Registration Details</h3>
 
-**OTP:** **<?= $otp ?>**
+        <table style='width:100%;font-size:15px;color:#333;'>
 
-This OTP is valid for **30 minutes** from the time this email was sent.
+            <tr>
+                <td><b>Hospital Name</b></td>
+                <td>{$_SESSION['hname']}</td>
+            </tr>
 
-Please enter this OTP on the verification page to complete your hospital registration.
+            <tr>
+                <td><b>Application Number</b></td>
+                <td>{$_SESSION['application_no']}</td>
+            </tr>
 
-### Important Security Information
+            <tr>
+                <td><b>Administrator</b></td>
+                <td>{$_SESSION['admin_name']}</td>
+            </tr>
 
-* Do **not** share this OTP with anyone.
-* Our team will **never** ask for your OTP by phone, email, or message.
-* If you did not initiate this registration, please ignore this email.
+            <tr>
+                <td><b>Administrator Email</b></td>
+                <td>{$_SESSION['admin_email']}</td>
+            </tr>
 
-If you need assistance, please contact our support team.
+        </table>
 
-Thank you for choosing the **Hospital Management System**.
+    </div>
 
-Regards,
+    <div style='text-align:center;background:#e8f4ff;padding:20px;border-radius:10px;border:2px dashed #0d6efd;'>
 
-**Hospital Management System Team**
-';
+        <p style='font-size:18px;margin:0;color:#333;'>
+            Your One-Time Password (OTP)
+        </p>
+
+        <h1 style='letter-spacing:8px;color:#0d6efd;margin:15px 0;'>
+            {$otp}
+        </h1>
+
+        <p style='color:#d9534f;font-weight:bold;margin:0;'>
+            This OTP is valid for 30 minutes.
+        </p>
+
+    </div>
+
+    <br>
+
+    <p style='font-size:15px;color:#444;line-height:1.8;'>
+        Please enter the above OTP on the verification page to complete
+        your hospital registration.
+    </p>
+
+    <div style='background:#fff8e5;padding:15px;border-left:5px solid orange;border-radius:8px;'>
+
+        <h3 style='margin-top:0;color:#d35400;'>Security Notice</h3>
+
+        <ul style='color:#555;line-height:1.8;'>
+
+            <li>Never share your OTP with anyone.</li>
+
+            <li>Our team will never ask for your OTP via phone, email or message.</li>
+
+            <li>If you did not request this registration, please ignore this email.</li>
+
+        </ul>
+
+    </div>
+
+    <br>
+
+    <div style='text-align:center;border-top:1px solid #ddd;padding-top:20px;'>
+
+        <p style='margin:0;font-size:15px;color:#555;'>
+            Thank you for choosing
+            <b>Hospital Management System</b>.
+        </p>
+
+        <p style='margin-top:10px;color:#888;font-size:13px;'>
+            This is an automated email. Please do not reply.
+        </p>
+
+    </div>
+
+</div>
+";
 
 
-    $mail->send();
 
+    $mail->send();   
 
-    echo "Email Sent Successfully.";
+        header("Location: verify_otp.php");
+        exit();
+    
 
 } catch (Exception $e) {
 
@@ -225,4 +297,3 @@ Regards,
 
 }
 
-?>

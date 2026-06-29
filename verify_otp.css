@@ -1,0 +1,32 @@
+*
+{
+    margin: 0;
+    padding: 0; 
+}
+ 
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 5% 5%, rgba(74, 239, 221, .45) 100%, transparent 32%),
+
+        radial-gradient(circle at 95% 85%, rgba(91, 196, 255, .40) 75%, transparent 35%),
+
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, .95) 0%, transparent 50%);
+      
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.main{
+    background: #ffffff;
+    display:flex;
+    justify-content: center;
+    height:270px;
+    width: 200px; 
+    padding:10px;
+   margin-top: 100px;  
+
+}
