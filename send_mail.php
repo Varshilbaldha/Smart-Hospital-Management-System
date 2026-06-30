@@ -117,7 +117,7 @@ $otp = rand(100000, 999999);
 $_SESSION['otp'] = $otp;
 
 $_SESSION['otp_generated_time'] = time();
-$_SESSION['otp_expiry_time'] = $_SESSION['otp_generated_time'] + 900;
+$_SESSION['otp_expiry_time'] = $_SESSION['otp_generated_time'] + 600;
 
 
 $_SESSION['application_no'] = "APP" . date("YmdHis") . rand(100, 999);
@@ -233,7 +233,7 @@ $mail->Body = "
         </h1>
 
         <p style='color:#d9534f;font-weight:bold;margin:0;'>
-            This OTP is valid for 30 minutes.
+            This OTP is valid for 10 minutes.
         </p>
 
     </div>
