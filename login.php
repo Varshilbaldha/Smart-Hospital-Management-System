@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
      
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="login2.css">
+    <link rel="stylesheet" href="login1.css">    
     
 
 </head>
@@ -38,11 +34,14 @@
             }
         }
     </script>
-    <h2 style="text-align: center;">Login</h2>
+    
 
     <form method="post" onsubmit="validation(event)" action="check.php">
         <div class="main">
             <div class="box">
+
+            <h2 style="text-align: center;">Login</h2><br>
+
 
                 <h3>Username : <input type="text" name="username" id="username" class="input"><br><Br>
                     <p style="color:red;font-size:16px;margin-top:-2px;" id="msg1"></p>
@@ -50,12 +49,7 @@
 
                     Password :
                     <input type="password" name="password" id="password" class="input">
-                    <p style="color:red;font-size:16px;margin-top:-2px;" id="msg"></p>
-
-
-
-
-            
+                    <p style="color:red;font-size:16px;margin-top:-2px;" id="msg"></p><br>
 
             <div class="login">
                 <input type="submit">

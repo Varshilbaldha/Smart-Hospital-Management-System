@@ -3,8 +3,8 @@
 
 <head>
     <title>Create Account</title>
-    <!-- <link rel="stylesheet" href="hospital_registration.css"> -->
-    <link rel="stylesheet" href="style5.css">
+    <link rel="stylesheet" href="hospital_registration.css">
+    <!-- <link rel="stylesheet" href="style5.css"> -->
     <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script src="hospital_registration.js"></script>
@@ -12,10 +12,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-<div class="blur blur1"></div>
-<div class="blur blur2"></div>
-<div class="blur blur3"></div>
 
+</div>
     <div class="Box1">
         <h2>Enter Your Valid Hospital Details</h2>
 
