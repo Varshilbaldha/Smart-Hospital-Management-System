@@ -53,7 +53,13 @@
 
             <div class="login">
                 <input type="submit">
-            </div>
+            </div><br>
+
+            <p class="new-register">
+                New User?
+            <a href="hospital_registration.php">Create Account</a>
+    </p>
+
         </div>
     </form>
 

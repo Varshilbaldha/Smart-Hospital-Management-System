@@ -105,6 +105,12 @@ body {
 
 }
 
+.new-register
+{
+    font-size: small;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .info-card{
 
     width:750px;
