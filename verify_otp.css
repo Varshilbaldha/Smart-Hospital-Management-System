@@ -16,6 +16,9 @@ body {
         radial-gradient(circle at 25% 25%, rgba(255, 255, 255, .95) 0%, transparent 50%);
       
     position: relative;
+    
+     font-family:'Poppins',sans-serif;
+
     min-height: 100vh;
 }
 
@@ -29,7 +32,13 @@ body {
 
     align-items:center;
 
-}
+
+    padding:50px 0;
+     
+    }
+   
+
+
 
 .otp-card{
 
@@ -39,19 +48,42 @@ body {
 
     padding:40px;
 
-    border-radius:25px;
+    border-radius:35px;
 
     text-align:center;
 
     box-shadow:0 20px 45px rgba(0,0,0,.15);
+    animation:animate 2.2s  ease-in-out infinite;
+}
+
+@keyframes animate{
+
+    0%{
+        transform:scale(1);
+    }
+
+    
+   
+
+    50%{
+        transform:scale(1.02);
+    }
+   
+    100%{
+        transform: scale(1);
+    }
 
 }
 
+
+
+
+
 .icon{
 
-    width:90px;
+    width:80px;
 
-    height:90px;
+    height:80px;
 
     margin:auto;
 
@@ -66,8 +98,49 @@ body {
     align-items:center;
 
     margin-bottom:20px;
+    animation: icon 2s ease-in-out infinite;
 
 }
+
+@keyframes icon{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        box-shadow:
+        0 0 20px rgba(0,184,148,.3);
+
+    }
+
+    25%{
+
+        transform:scale(1.015);
+
+    }
+
+    50%{
+
+        transform:scale(1.025);
+
+        box-shadow:
+        0 0 35px rgba(0,184,148,.7),
+        0 0 70px rgba(13,110,253,.4);
+
+    }
+
+    75%{
+
+        transform:scale(1.015);
+
+    }
+    100%
+    {
+        transform:scale(1);
+    }
+
+}
+
 
 .icon i{
 
@@ -138,6 +211,7 @@ label{
     outline:none;
 
     transition:.3s;
+    border-color: #0a6b8b;
 
 }
 
@@ -195,6 +269,7 @@ button{
     background:linear-gradient(135deg,#00a88f,#0d6efd);
 
     transition:.3s;
+    
 
 }
 

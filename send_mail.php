@@ -1,114 +1,114 @@
 <?php
 session_start();
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $_SESSION['hospital_name'] = $_POST['hname'];
-//     $_SESSION['registration_no'] = $_POST['lino'];
-//     $_SESSION['hospital_type'] = $_POST['htype'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['hospital_name'] = $_POST['hname'];
+    $_SESSION['registration_no'] = $_POST['lino'];
+    $_SESSION['hospital_type'] = $_POST['htype'];
 
-//     $_SESSION['hospital_email'] = $_POST['email'];
-//     $_SESSION['hospital_phone'] = $_POST['phone'];
-//     $_SESSION['emergency_no'] = $_POST['eno'];
-//     $_SESSION['website'] = $_POST['website'];
+    $_SESSION['hospital_email'] = $_POST['email'];
+    $_SESSION['hospital_phone'] = $_POST['phone'];
+    $_SESSION['emergency_no'] = $_POST['eno'];
+    $_SESSION['website'] = $_POST['website'];
 
-//     $_SESSION['address1'] = $_POST['address1'];
-//     $_SESSION['address2'] = $_POST['address2'];
-//     $_SESSION['city'] = $_POST['city'];
-//     $_SESSION['state'] = $_POST['state'];
-//     $_SESSION['zip'] = $_POST['zip'];
+    $_SESSION['address1'] = $_POST['address1'];
+    $_SESSION['address2'] = $_POST['address2'];
+    $_SESSION['city'] = $_POST['city'];
+    $_SESSION['state'] = $_POST['state'];
+    $_SESSION['zip'] = $_POST['zip'];
 
-//     $_SESSION['admin_name'] = $_POST['adminname'];
-//     $_SESSION['admin_username'] = $_POST['adminusername'];
-//     $_SESSION['admin_email'] = $_POST['adminemail'];
-//     $_SESSION['admin_mobile'] = $_POST['adminmobile'];
-//     $_SESSION['password'] = $_POST['adminpassword'];
-// }
+    $_SESSION['admin_name'] = $_POST['adminname'];
+    $_SESSION['admin_username'] = $_POST['adminusername'];
+    $_SESSION['admin_email'] = $_POST['adminemail'];
+    $_SESSION['admin_mobile'] = $_POST['adminmobile'];
+    $_SESSION['password'] = $_POST['adminpassword'];
+}
 
-// else {
-//     die("Invalid Request Method");
+else {
+    die("Invalid Request Method");
 
-// }
-
-
-
-// $required = [
-//     'hname',
-//     'lino',
-//     'htype',
-//     'email',
-//     'phone',
-//     'eno',
-//     'address1',
-//     'address2',
-//     'city',
-//     'state',
-//     'zip',
-//     'adminname',
-//     'adminusername',
-//     'adminemail',
-//     'adminmobile',
-//     'adminpassword'
-// ];
-
-// foreach ($required as $field) {
-//     if (!isset($_POST[$field]) || trim($_POST[$field]) == "") {
-//         die("Error: $field is required.");
-//     }
-// }
-
-// if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-//     die("Invalid Hospital Email.");
-// }
-
-// if (!filter_var($_POST['adminemail'], FILTER_VALIDATE_EMAIL)) {
-//     die("Invalid Administrator Email.");
-// }
-
-// if (!preg_match('/^[6-9][0-9]{9}$/', $_POST['phone'])) {
-//     die("Invalid Hospital Phone Number.");
-// }
-
-// if (!preg_match('/^[6-9][0-9]{9}$/', $_POST['eno'])) {
-//     die("Invalid Emergency Number.");
-// }
-
-// if (!preg_match('/^[6-9][0-9]{9}$/', $_POST['adminmobile'])) {
-//     die("Invalid Administrator Mobile Number.");
-// }
-
-// if (!preg_match('/^[0-9]{6}$/', $_POST['zip'])) {
-//     die("Invalid Zip Code.");
-// }
+}
 
 
-// $password = $_POST['adminpassword'];
 
-// if (
-//     strlen($password) < 8 ||
-//     !preg_match('/[A-Z]/', $password) ||
-//     !preg_match('/[a-z]/', $password) ||
-//     !preg_match('/[0-9]/', $password) ||
-//     !preg_match('/[@$!%*?&]/', $password)
-// ) {
-//     die("Password is not strong enough.");
-// }
-// if (!isset($_FILES['license_doc']) || $_FILES['license_doc']['error'] != 0) {
-//     die("Please upload License Document.");
-// }
+$required = [
+    'hname',
+    'lino',
+    'htype',
+    'email',
+    'phone',
+    'eno',
+    'address1',
+    'address2',
+    'city',
+    'state',
+    'zip',
+    'adminname',
+    'adminusername',
+    'adminemail',
+    'adminmobile',
+    'adminpassword'
+];
 
-// $allowed = [
-//     "application/pdf",
-//     "image/jpeg",
-//     "image/png"
-// ];
+foreach ($required as $field) {
+    if (!isset($_POST[$field]) || trim($_POST[$field]) == "") {
+        die("Error: $field is required.");
+    }
+}
 
-// if (!in_array($_FILES['license_doc']['type'], $allowed)) {
-//     die("Only PDF, JPG and PNG files are allowed.");
-// }
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    die("Invalid Hospital Email.");
+}
 
-// if ($_FILES['license_doc']['size'] > 200 * 1024) {
-//     die("License document must be less than 200 KB.");
-// }
+if (!filter_var($_POST['adminemail'], FILTER_VALIDATE_EMAIL)) {
+    die("Invalid Administrator Email.");
+}
+
+if (!preg_match('/^[6-9][0-9]{9}$/', $_POST['phone'])) {
+    die("Invalid Hospital Phone Number.");
+}
+
+if (!preg_match('/^[6-9][0-9]{9}$/', $_POST['eno'])) {
+    die("Invalid Emergency Number.");
+}
+
+if (!preg_match('/^[6-9][0-9]{9}$/', $_POST['adminmobile'])) {
+    die("Invalid Administrator Mobile Number.");
+}
+
+if (!preg_match('/^[0-9]{6}$/', $_POST['zip'])) {
+    die("Invalid Zip Code.");
+}
+
+
+$password = $_POST['adminpassword'];
+
+if (
+    strlen($password) < 8 ||
+    !preg_match('/[A-Z]/', $password) ||
+    !preg_match('/[a-z]/', $password) ||
+    !preg_match('/[0-9]/', $password) ||
+    !preg_match('/[@$!%*?&]/', $password)
+) {
+    die("Password is not strong enough.");
+}
+if (!isset($_FILES['license_doc']) || $_FILES['license_doc']['error'] != 0) {
+    die("Please upload License Document.");
+}
+
+$allowed = [
+    "application/pdf",
+    "image/jpeg",
+    "image/png"
+];
+
+if (!in_array($_FILES['license_doc']['type'], $allowed)) {
+    die("Only PDF, JPG and PNG files are allowed.");
+}
+
+if ($_FILES['license_doc']['size'] > 200 * 1024) {
+    die("License document must be less than 200 KB.");
+}
 
 
 $otp = rand(100000, 999999);
