@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         unset($_SESSION['otp_expiry_time']);
 
         echo "<script>
-        alert('OTP Verified Successfully.');
+        alert('OTP Verified Successfully. You can now login Using Application No. Send On Admin E-Mail After Registration.');
         window.location='login.php';
         </script>";
         exit();

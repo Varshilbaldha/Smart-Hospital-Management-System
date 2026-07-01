@@ -110,6 +110,26 @@ if ($_FILES['license_doc']['size'] > 200 * 1024) {
     die("License document must be less than 200 KB.");
 }
 
+$upload_dir = "uploads/";
+
+if (!is_dir($upload_dir)) {
+    mkdir($upload_dir, 0777, true);
+}
+
+$filename = time() . "_" . basename($_FILES['license_doc']['name']);
+
+$target_file = $upload_dir . $filename;
+
+if (move_uploaded_file($_FILES['license_doc']['tmp_name'], $target_file)) {
+
+    $_SESSION['license_doc'] = $filename;
+
+} else {
+
+    die("Failed to upload the license document.");
+
+}
+
 
 $otp = rand(100000, 999999);
 
@@ -196,11 +216,11 @@ $mail->Body = "
 
         <h3 style='margin-top:0;color:#0d6efd;'>Registration Details</h3>
 
-        <table style='width:100%;font-size:15px;color:#333;'>
+        <table style='width:100%;font-size:14px;color:#333;'>
 
             <tr>
                 <td><b>Hospital Name</b></td>
-                <td>{$_SESSION['hname']}</td>
+                <td>{$_SESSION['hospital_name']}</td>
             </tr>
 
             <tr>

@@ -38,13 +38,15 @@
 
     <form method="post" onsubmit="validation(event)" action="check.php">
         <div class="main">
+            
             <div class="box">
 
             <h2 style="text-align: center;">Login</h2><br>
 
 
-                <h3>Username : <input type="text" name="username" id="username" class="input"><br><Br>
+                <h3>Applicaton No : <input type="text" name="app" id="app" class="input"><br><Br>
                     <p style="color:red;font-size:16px;margin-top:-2px;" id="msg1"></p>
+                    
 
 
                     Password :
