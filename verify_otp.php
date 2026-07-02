@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         echo "<script>
         alert('OTP Verified Successfully. You can now login Using Application No. Send On Admin E-Mail After Registration.');
-        window.location='login.php';
+        window.location='hospital_database.php';
         </script>";
         exit();
 

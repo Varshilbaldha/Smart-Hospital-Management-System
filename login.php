@@ -36,7 +36,7 @@
     </script>
     
 
-    <form method="post" onsubmit="validation(event)" action="check.php">
+    <form method="post" onsubmit="validation(event)" action="login_check.php">
         <div class="main">
             
             <div class="box">
@@ -55,7 +55,13 @@
 
             <div class="login">
                 <input type="submit">
-            </div>
+            </div><br>
+
+            <p class="new-register">
+                New User?
+            <a href="hospital_registration.php">Create Account</a>
+    </p>
+
         </div>
     </form>
 
