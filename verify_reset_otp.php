@@ -1,61 +1,110 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('log_errors', 1);
 
 session_start();
 
-// OTP Verification
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user_otp =
-        $_POST['otp1'] .
-        $_POST['otp2'] .
-        $_POST['otp3'] .
-        $_POST['otp4'] .
-        $_POST['otp5'] .
-        $_POST['otp6'];
+        ($_POST['otp1'] ?? '') .
+        ($_POST['otp2'] ?? '') .
+        ($_POST['otp3'] ?? '') .
+        ($_POST['otp4'] ?? '') .
+        ($_POST['otp5'] ?? '') .
+        ($_POST['otp6'] ?? '');
 
-    // Check OTP exists
-    if (!isset($_SESSION['reset_otp'])) {
-        die("OTP not found. Please register again.");
-    }
 
-    // Check expiry time exists
-    if (!isset($_SESSION['reset_otp_expiry'])) {
-        die("OTP session expired.");
-    }
 
-    // Check OTP expiry
-    if (time() > $_SESSION['reset_otp_expiry']) {
+    if (!preg_match('/^[0-9]{6}$/', $user_otp)) {
+
         echo "<script>
-        alert('OTP has expired. Please request a new OTP.');
-        window.location='verify_otp.php';
+        alert('Please enter a valid 6-digit OTP.');
         </script>";
-        exit();
+
     }
 
-    // Verify OTP
-    if ($user_otp == $_SESSION['reset_otp']) {
 
-        // Remove OTP after successful verification
+
+
+    elseif (!isset($_SESSION['reset_otp'])) {
+
+        echo "<script>
+        alert('OTP not found. Please request a new OTP.');
+        window.location='forgot_password.php';
+        </script>";
+
+        exit();
+
+    }
+
+
+
+    elseif (!isset($_SESSION['reset_otp_expiry'])) {
+
+        echo "<script>
+        alert('OTP session expired.');
+        window.location='forgot_password.php';
+        </script>";
+
+        exit();
+
+    }
+
+
+ 
+
+    elseif (time() > $_SESSION['reset_otp_expiry']) {
+
         unset($_SESSION['reset_otp']);
         unset($_SESSION['reset_otp_generated_time']);
+        unset($_SESSION['reset_otp_expiry']);
 
         echo "<script>
-        alert('OTP Verified Successfully. You can now login Using Application No. Send On Admin E-Mail After Registration.');
-        window.location='hospital_database.php';
+        alert('OTP has expired. Please request a new OTP.');
+        window.location='forgot_password.php';
         </script>";
+
         exit();
 
-    } else {
+    }
+
+    elseif (
+        hash_equals(
+            (string) $_SESSION['reset_otp'],
+            (string) $user_otp
+        )
+    ) {
+
+        unset($_SESSION['reset_otp']);
+        unset($_SESSION['reset_otp_generated_time']);
+        unset($_SESSION['reset_otp_expiry']);
+
+
+        $_SESSION['reset_otp_verified'] = true;
+
+
+        header("Location: reset_password.php");
+
+        exit();
+
+    }
+
+
+
+    else {
 
         echo "<script>
         alert('Invalid OTP. Please try again.');
         </script>";
 
     }
+
 }
+
 ?>
 
 <!DOCTYPE html>

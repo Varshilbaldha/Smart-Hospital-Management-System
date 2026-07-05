@@ -1,12 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CarePlus | Smart Hospital Management System</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
-<div class="move">
-    <marquee scrollamount="15"><span style="font-size:25px;">Welcome to Hospital Management System</span></marquee>
-</div>
+
+    <div class="hero-section">
+
+        <h1>
+            Your Healthcare, Connected in One Place
+        </h1>
+
+        <p>
+            Access healthcare services or manage your hospital
+            through one smart platform.
+        </p>
+
+    </div>
+
+
+    <div class="portals-container">
+
+
+        
+
+        <div class="portal-card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+            <h2>Patient Portal</h2>
+
+            <p>
+                Search hospitals, find doctors, book appointments,
+                and securely access your medical records through
+                one centralized healthcare platform.
+            </p>
+
+            <a href="#"
+               class="portal-btn btn-primary">
+
+                Patient Login
+
+            </a>
+
+        </div>
+
+
+       
+
+        <div class="portal-card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-hospital-user"></i>
+
+            </div>
+
+            <h2>Hospital Portal</h2>
+
+            <p>
+                Manage your hospital, departments, doctors, staff,
+                patients, appointments, and healthcare services
+                through a smart management dashboard.
+            </p>
+
+            <a href="login.php"
+               class="portal-btn btn-secondary">
+
+                Hospital Login
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+   
+
+    <div class="hospital-register">
+
+        <p style="font-weight: 5px; padding:10px; font-size: 18px;">
+            New hospital joining CarePlus?
+        </p>
+
+        <a href="hospital_registration.php">
+
+            Register Your Hospital
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <footer>
+
+        &copy; 2026 CarePlus Smart Hospital Management System.
+
+    </footer>
+
 
 </body>
-</html>
+
+</html> 

@@ -1,0 +1,217 @@
+
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            /* Your requested custom radial gradient */
+            background: 
+                radial-gradient(circle at 5% 5%, rgba(74, 239, 221, .45) 100%, transparent 32%),
+                radial-gradient(circle at 95% 85%, rgba(91, 196, 255, .40) 75%, transparent 35%),
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, .95) 0%, transparent 50%),
+                #f4f8fb; /* Soft fallback base color */
+            
+            min-height: 100vh;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+       
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #0f3460;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-size: 12px;
+            display: block;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #16a085;
+        }
+
+        .btn-outline {
+            border: 1px solid #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: #333;
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 0 20px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #111;
+            font-family: 'Georgia', serif; /* Gives that elegant look from the image */
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        /* Portal Cards Layout */
+        .portals-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 0 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        /* Glassmorphism Card Style */
+        .portal-card {
+            flex: 1;
+            min-width: 320px;
+            background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+            backdrop-filter: blur(12px); /* Blurs the gradient behind it */
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 50px 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .portal-card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .portal-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
+            color: #111;
+        }
+
+        .portal-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            min-height: 65px;
+        }
+
+        /* Buttons */
+        .portal-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        /* Solid Button for Patient */
+        .btn-primary {
+            background-color: #16a085;
+            color: white;
+            border: 1px solid #16a085;
+        }
+
+        .btn-primary:hover {
+            background-color: #12876f;
+            box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+        }
+
+        /* Outlined Button for Management */
+        .btn-secondary {
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 40px 20px 20px;
+            font-size: 0.8rem;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+
+      
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       
+        @media (max-width: 768px) {
+            .nav-links { display: none; /* Hidden on small screens for simplicity */ }
+            .portals-container { flex-direction: column; align-items: center; }
+            .portal-card { width: 100%; max-width: 400px; }
+        }
