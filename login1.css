@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 46px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='46' viewBox='0 0 400 46'%3E%3Cpolyline points='0,23 90,23 105,23 115,4 125,42 135,10 145,30 155,23 400,23' fill='none' stroke='%23f2a341' stroke-width='2' stroke-opacity='0.55'/%3E%3C/svg%3E");
+    background-repeat:round;
+    background-size: 400px 46px;
+    animation: pulse-scroll 6s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+@keyframes pulse-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-400px); }
+}
  
 body {
     min-height: 100vh;
@@ -50,6 +68,17 @@ body {
     box-shadow: 0 15px 35px rgba(0, 172, 225, 0.525);
 
     
+}
+.box{
+    position: absolute;
+    top: 130px;
+    right: 120px;
+
+    width: 350px;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .input{
@@ -104,30 +133,27 @@ body {
     box-shadow:0 8px 25px rgba(1, 146, 230, 0.537);
 
 }
+.forgotForm
+{
+    font-size: small;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
+    text-align: right;
+}
 
 .new-register
 {
     font-size: small;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
 }
 .info-card{
 
-    width:750px;
+    width:900px;
 
     padding:50px;
 
     border-radius:20px;
-
-    background:rgba(255,255,255,.18);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.3);
-
-    box-shadow: 0 15px 35px rgba(0, 172, 225, 0.525);
-
-    background-color:rgb(189, 255, 255);
-
 }
 
 .info-card h2{
@@ -136,7 +162,7 @@ body {
 
     margin:20px 0;
 
-    color:#002952;
+    color:#023363;
 }
 
 .info-card p{
@@ -183,4 +209,18 @@ body {
 
 }
 
+}
+.info-list li{
+    font-size:18px;
+    margin:18px 0;
+    display:flex;
+    align-items:center;
+    color:#222;
+}
+
+.info-list i{
+    color:#04165d4b;
+    font-size:20px;
+    width:20px;
+    margin-right:18px;
 }

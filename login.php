@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
      
-    <!-- <link rel="stylesheet" href="login4.css"> -->
+    <link rel="stylesheet" href="login1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
@@ -38,6 +39,19 @@
         }
     </script>
 
+    <div class="info-card glass"><br><br><br><br><br>
+                <span class="eyebrow">Onboarding · Hospital</span>
+                <h2 class="info-title">Register your hospital with a trusted health network.</h2>
+                <p class="info-desc">Complete a quick 5-step verification to activate your institutional dashboard, manage staff, OPD, IPD, billing and patient records — all from one secure place.</p>
+
+                <ul class="info-list">
+                    <li><i class="fa-solid fa-shield-halved"></i><span>HIPAA-aligned data handling</span></li>
+                    <li><i class="fa-solid fa-clock-rotate-left"></i><span>24×7 real-time sync across departments</span></li>
+                    <li><i class="fa-solid fa-user-doctor"></i><span>Role-based access for doctors & admins</span></li>
+                    <li><i class="fa-solid fa-chart-line"></i><span>Live analytics for occupancy & revenue</span></li>
+                </ul>
+    </div>
+
     <form method="post" onsubmit="validation(event)" action="login_check.php">
         <div class="main">
             
@@ -61,7 +75,7 @@
 
             <p class="forgotForm">
                 
-            <a href="forgot_password.php">Forget Password?</a>
+            <a href="forgot_password.php">Forgot Password</a><br><br>
 
             <p class="new-register">
                 New User?
@@ -71,18 +85,6 @@
         </div>
     </form>
 
-    <div class="info-card glass">
-                <span class="eyebrow">Onboarding · Hospital</span>
-                <h2 class="info-title">Register your hospital with a trusted health network.</h2>
-                <p class="info-desc">Complete a quick 5-step verification to activate your institutional dashboard, manage staff, OPD, IPD, billing and patient records — all from one secure place.</p>
-
-                <ul class="info-list">
-                    <li><i class="fa-solid fa-shield-halved"></i><span>HIPAA-aligned data handling</span></li>
-                    <li><i class="fa-solid fa-clock-rotate-left"></i><span>24×7 real-time sync across departments</span></li>
-                    <li><i class="fa-solid fa-user-doctor"></i><span>Role-based access for doctors & admins</span></li>
-                    <li><i class="fa-solid fa-chart-line"></i><span>Live analytics for occupancy & revenue</span></li>
-                </ul>
-            </div>
 
 </body>
 
