@@ -100,9 +100,9 @@
 
     <div class="hospital-register">
 
-        <p style="font-weight: 5px; padding:10px; font-size: 18px;">
+        <p style="font-weight: 5px; padding:25px; font-size: 15px; animation: fadeInUp 0.8s ease-out 0.4s both;">
             New hospital joining CarePlus?
-        </p>
+     
 
         <a href="hospital_registration.php">
 
@@ -111,7 +111,7 @@
             <i class="fa-solid fa-arrow-right"></i>
 
         </a>
-
+           </p>
     </div>
 
 

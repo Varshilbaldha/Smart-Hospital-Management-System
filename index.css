@@ -1,5 +1,4 @@
 
-        /* Base Reset */
         * {
             margin: 0;
             padding: 0;
@@ -8,7 +7,7 @@
         }
 
         body {
-            /* Your requested custom radial gradient */
+         
             background: 
                 radial-gradient(circle at 5% 5%, rgba(74, 239, 221, .45) 100%, transparent 32%),
                 radial-gradient(circle at 95% 85%, rgba(91, 196, 255, .40) 75%, transparent 35%),
@@ -41,26 +40,7 @@
             margin-top: 4px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #16a085;
-        }
-
+       
         .btn-outline {
             border: 1px solid #333;
             padding: 10px 20px;
@@ -73,7 +53,7 @@
             color: white !important;
         }
 
-        /* Hero Section */
+
         .hero-section {
             text-align: center;
             margin-top: 60px;
@@ -96,7 +76,7 @@
             margin: 0 auto 50px auto;
         }
 
-        /* Portal Cards Layout */
+      
         .portals-container {
             display: flex;
             justify-content: center;
@@ -105,9 +85,10 @@
             max-width: 1000px;
             margin: 0 auto;
             flex-wrap: wrap;
+            
         }
 
-        /* Glassmorphism Card Style */
+    
         .portal-card {
             flex: 1;
             min-width: 320px;
@@ -119,6 +100,7 @@
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border-radius: 62px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
@@ -130,6 +112,13 @@
         .portal-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.8); 
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+             transform:scale(1.05);
+
+                box-shadow:0 8px 25px rgba(0, 0, 0, 0.537);
+           
         }
 
         .icon {
@@ -165,12 +154,13 @@
             border-radius: 4px;
             transition: all 0.3s ease;
         }
+        
 
-        /* Solid Button for Patient */
         .btn-primary {
             background-color: #16a085;
             color: white;
             border: 1px solid #16a085;
+            border-radius: 50px;
         }
 
         .btn-primary:hover {
@@ -178,11 +168,12 @@
             box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
         }
 
-        /* Outlined Button for Management */
+       
         .btn-secondary {
             background-color: transparent;
             color: #333;
             border: 1px solid #333;
+             border-radius: 50px;
         }
 
         .btn-secondary:hover {
@@ -190,7 +181,7 @@
             color: white;
         }
 
-        /* Footer */
+      
         footer {
             margin-top: auto;
             text-align: center;
