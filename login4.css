@@ -1,0 +1,300 @@
+/* =========================================================
+   Hospital Login — "Clinical Dawn" theme
+   Deep teal + warm amber, ECG pulse as the signature motif
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+    --teal-950: #0d2b28;
+    --teal-800: #124b45;
+    --teal-600: #1b6e64;
+    --mint-100: #eef6f2;
+    --mint-050: #f7fbf9;
+    --amber-500: #f2a341;
+    --amber-600: #d98a2b;
+    --ink: #10302b;
+    --ink-soft: #4d6a64;
+    --white: #ffffff;
+    --danger: #d64545;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(242, 163, 65, 0.12), transparent 45%),
+        linear-gradient(160deg, var(--teal-950) 0%, var(--teal-800) 45%, var(--teal-600) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ---------- signature element: animated ECG pulse line ---------- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 46px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='46' viewBox='0 0 400 46'%3E%3Cpolyline points='0,23 90,23 105,23 115,4 125,42 135,10 145,30 155,23 400,23' fill='none' stroke='%23f2a341' stroke-width='2' stroke-opacity='0.55'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 400px 46px;
+    animation: pulse-scroll 6s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes pulse-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-400px); }
+}
+
+/* ================= LEFT: login form ================= */
+form {
+    flex: 1 1 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.main {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    background: var(--mint-050);
+    border-radius: 18px;
+    padding: 40px 34px 32px;
+    width: 100%;
+    box-shadow:
+        0 24px 48px -16px rgba(6, 30, 27, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--amber-500), var(--teal-600));
+}
+
+.box h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--teal-950);
+    margin: 6px 0 26px;
+    letter-spacing: -0.02em;
+}
+
+.box h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 6px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border: 1.5px solid #d8e5e1;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--amber-500);
+    box-shadow: 0 0 0 4px rgba(242, 163, 65, 0.18);
+}
+
+#msg1, #msg {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px !important;
+    font-weight: 500;
+    color: var(--danger) !important;
+    min-height: 4px;
+    line-height: 1.4;
+}
+
+.login {
+    margin-top: 18px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--amber-500), var(--amber-600));
+    color: var(--teal-950);
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 8px 20px -6px rgba(217, 138, 43, 0.55);
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px -6px rgba(217, 138, 43, 0.65);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.new-register {
+    text-align: center;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 22px;
+}
+
+.new-register a {
+    color: var(--teal-600);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.new-register a:hover {
+    border-color: var(--teal-600);
+}
+
+/* ================= RIGHT: info panel ================= */
+.info-card {
+    flex: 1 1 920px;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 52px;
+    position: relative;
+    z-index: 1;
+    color: var(--mint-100);
+}
+
+.info-card.glass {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber-500);
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.info-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.25;
+    color: var(--white);
+    margin: 0 0 16px;
+    max-width: 420px;
+}
+
+.info-desc {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: rgba(238, 246, 242, 0.8);
+    max-width: 420px;
+    margin-bottom: 32px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14.5px;
+    color: var(--mint-100);
+}
+
+.info-list li i {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(242, 163, 65, 0.16);
+    color: var(--amber-500);
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+    body {
+        flex-direction: column;
+    }
+
+    .info-card {
+        order: -1;
+        max-width: 100%;
+        padding: 40px 28px;
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    form {
+        padding: 36px 20px 48px;
+    }
+
+    .info-title {
+        font-size: 26px;
+    }
+}

@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
      
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="stylesheet" href="login2.css">   
-    
+    <link rel="stylesheet" href="login4.css">
 
 </head>
 
@@ -38,7 +33,6 @@
             }
         }
     </script>
-    
 
     <form method="post" onsubmit="validation(event)" action="login_check.php">
         <div class="main">

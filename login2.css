@@ -230,13 +230,13 @@ body::selection{
     margin:18px 0;
     padding:12px;
     border-radius:12px;
-    background:rgba(255,255,255,.05);
+    background:rgba(255, 255, 255, 0.705);
     transition:.3s;
 }
 
 .info-list li:hover{
     transform:translateX(8px);
-    background:rgba(0,255,255,.15);
+    background:rgba(0, 255, 255, 0.664);
 }
 
 .info-list i{
