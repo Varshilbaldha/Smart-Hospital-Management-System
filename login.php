@@ -1,3 +1,7 @@
+<?php
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
      
-    <link rel="stylesheet" href="login4.css">
+    <!-- <link rel="stylesheet" href="login4.css"> -->
 
 </head>
 
@@ -52,8 +56,12 @@
                     <p style="color:red;font-size:16px;margin-top:-2px;" id="msg"></p><br>
 
             <div class="login">
-                <input type="submit">
+                <input type="Login">
             </div><br>
+
+            <p class="forgotForm">
+                
+            <a href="forgot_password.php">Forget Password?</a>
 
             <p class="new-register">
                 New User?

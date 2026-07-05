@@ -1,86 +1,63 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
+$conn = mysqli_connect("localhost", "Hospital_management", "B@ldh@ V@rshil", "hospital_management");
 
-require("db.php");
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = trim($_POST['username'] ?? '');
-    $password = trim($_POST['password'] ?? '');
-
-    // Check empty fields
-    if (empty($username) || empty($password)) {
-        echo "<script>
-                alert('Please fill all fields');
-                window.location.href='login.php';
-              </script>";
-        exit();
-    }
-    if (!preg_match("/^[a-zA-Z0-9_]{3,20}$/", $username)) {
-        die("Invalid username");
-    }
-
-    if (
-        !preg_match(
-            "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,20}$/",
-            $password
-        )
-    ) {
-        die("Invalid password");
-    }
-
-    // Prepare query
-    $stmt = mysqli_prepare(
-        $conn,
-        "SELECT username, password FROM users WHERE username = ?"
-    );
-
-    if (!$stmt) {
-        die("Prepare Failed: " . mysqli_error($conn));
-    }
-
-    mysqli_stmt_bind_param($stmt, "s", $username);
-
-    mysqli_stmt_execute($stmt);
-
-    $result = mysqli_stmt_get_result($stmt);
-
-    // Username not found
-    if (mysqli_num_rows($result) == 0) {
-        echo "<script>
-                alert('Username Not Found');
-                window.location.href='login.php';
-              </script>";
-        exit();
-    }
-
-    $row = mysqli_fetch_assoc($result);
-        
-
-    // Verify password
-    if ($password == $row['password']) {
-        
-       $_SESSION['username'] = $row['username'];
-
-        echo "<script>
-                alert('Login Successful');
-                
-                window.location.href='dashboard.php';
-              </script>";
-    } else {
-        echo "<script>
-                alert('Wrong Password');
-                window.location.href='login.php';
-              </script>";
-    }
-
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
+if (!$conn) {
+    die("connetion Error" . mysqli_connect_errno());
 } else {
-    header("Location: index.php");
-    exit();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $app = $_POST['app'];
+        $password = $_POST['password'];
+
+
+        $query = "SELECT * FROM hospital_registration WHERE application_no = ? ";
+
+        $stmt = mysqli_prepare($conn, $query);
+
+        if (!$stmt) {
+            echo "error in preparing statement: " . mysqli_error($conn);
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $app);
+
+        mysqli_stmt_execute($stmt);
+
+        $result = mysqli_stmt_get_result($stmt);
+
+        if (mysqli_num_rows($result) == 1) {
+            $row = mysqli_fetch_assoc($result);
+           
+            $hashed_password = $row['password'];
+            if (password_verify($password, $hashed_password)) {
+                session_regenerate_id(true);
+
+                $_SESSION['logged_in'] = true;
+                $_SESSION['user_role'] = "hospital_admin";
+
+                $_SESSION['application_no'] = $row['application_no'];
+                $_SESSION['hospital_name'] = $row['hospital_name'];
+                $_SESSION['admin_name'] = $row['admin_name'];
+                $_SESSION['admin_username'] = $row['admin_username'];
+
+                header("Location: admin_dashboard.php");
+                exit();
+            } else {
+                echo "<script>
+                        alert('Invalid Password');
+                        window.location='login.php';
+                        </script>";
+            }
+
+
+        } else {
+
+            echo "<script>
+                        alert('Invalid Application No');
+                        window.location='login.php';
+                        </script>";
+        }
+    }
 }
+
 ?>
