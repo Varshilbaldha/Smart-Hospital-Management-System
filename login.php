@@ -56,7 +56,7 @@
                     <p style="color:red;font-size:16px;margin-top:-2px;" id="msg"></p><br>
 
             <div class="login">
-                <input type="Login">
+                <input type="submit" value="Login" class="btn">
             </div><br>
 
             <p class="forgotForm">
