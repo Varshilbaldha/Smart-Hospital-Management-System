@@ -10,16 +10,20 @@
 
     <title>Forgot Password</title>
 
+    <link rel="stylesheet" href="forgot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+
 </head>
 
 <body>
+<h1 class="title">
+    <span class="icon">
+        <i class="fa-solid fa-lock-open"></i>
+    </span>
+    Forgot Password
+</h1>
 
-<h1>Forgot Password</h1>
-
-<p>
-    Enter your hospital application number.
-    We will send an OTP to your registered administrator email.
-</p>
 
 <form id="forgotForm">
 
@@ -36,9 +40,14 @@
     <button type="submit">
         Send OTP
     </button>
+    <a href="login.php" class="back-login">
+    <i class="fa-solid fa-arrow-left"></i> Back to Login
+    </a>
 
 </form>
-
+<p>
+    We will send an OTP to your registered administrator email.
+</p>
 
 <script>
 
