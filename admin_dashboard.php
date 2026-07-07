@@ -22,20 +22,28 @@ require 'auth.php';
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
+
+
+
 
 <body>
 
+
+
 <div class="dashboard">
 
-
-    <aside class="sidebar">
+    <aside class="sidebar closed" id="sidebar">
 
         <div class="hospital-logo">
 
-            <div class="logo-icon">
-                <i class="fa-solid fa-hospital"></i>
-            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+
+                 <i class="fa-solid fa-hospital"></i>
+
+</button>
 
             <h2>
                 <?php
@@ -48,7 +56,7 @@ require 'auth.php';
         </div>
 
 
-        <!-- ADMIN PROFILE -->
+       
 
         <div class="admin-profile">
 
@@ -75,7 +83,7 @@ require 'auth.php';
         </div>
 
 
-        <!-- MENU -->
+        
 
         <nav class="menu">
 
@@ -84,7 +92,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-table-columns"></i>
 
-                Dashboard
+                <span>Dashboard</span>
 
             </a>
 
@@ -93,7 +101,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-hospital-user"></i>
 
-                Hospital Profile
+                <span>Hospital Profile</span>
 
             </a>
 
@@ -102,7 +110,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-building"></i>
 
-                Departments
+                <span>Departments</span>
 
             </a>
 
@@ -111,7 +119,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-user-doctor"></i>
 
-                Doctors
+                <span>Doctors</span>
 
             </a>
 
@@ -120,7 +128,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-users"></i>
 
-                Staff
+                <span>Staff</span>
 
             </a>
 
@@ -129,7 +137,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-bed-pulse"></i>
 
-                Patients
+                <span>Patients</span>
 
             </a>
 
@@ -138,7 +146,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-calendar-check"></i>
 
-                Appointments
+                <span>Appointments</span>
 
             </a>
 
@@ -147,7 +155,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-hand-holding-medical"></i>
 
-                Services
+                <span>Services</span>
 
             </a>
 
@@ -156,7 +164,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-chart-line"></i>
 
-                Reports
+                <span>Reports</span>
 
             </a>
 
@@ -165,7 +173,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-gear"></i>
 
-                Settings
+                <span>Settings</span>
 
             </a>
 
@@ -174,7 +182,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-right-from-bracket"></i>
 
-                Logout
+                <span>Logout</span>
 
             </a>
 
@@ -183,11 +191,10 @@ require 'auth.php';
     </aside>
 
 
-    <!-- MAIN CONTENT -->
+  
 
     <main class="main-content">
 
-        <!-- TOP BAR -->
 
         <header class="topbar">
 
@@ -195,9 +202,7 @@ require 'auth.php';
 
                 <i class="fa-solid fa-magnifying-glass"></i>
 
-                <input
-                    type="text"
-                    placeholder="Search anything...">
+                <input type="text" placeholder="Search anything...">
 
             </div>
 
@@ -219,7 +224,6 @@ require 'auth.php';
         </header>
 
 
-        <!-- PAGE TITLE -->
 
         <section class="welcome">
 
@@ -240,7 +244,6 @@ require 'auth.php';
         </section>
 
 
-        <!-- STAT CARDS -->
 
         <section class="stats">
 
@@ -305,9 +308,209 @@ require 'auth.php';
 
         </section>
 
+
+        <section class="analytics">
+
+    <div class="chart-card appointments-chart">
+
+        <div class="card-header">
+
+            <h3>Appointments Overview</h3>
+
+            <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+        <div class="chart-placeholder">
+
+            <canvas id="appointmentChart"></canvas>
+
+        </div>
+
+    </div>
+
+
+    <div class="chart-card department-chart">
+
+        <div class="card-header">
+
+            <h3>Patients by Department</h3>
+
+            <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+        <div class="department-content">
+
+            <div class="donut-container">
+
+                <canvas id="departmentChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="dashboard-bottom">
+
+    <div class="bottom-card">
+
+        <div class="card-header">
+
+            <h3>Recent Appointments</h3>
+
+            <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+
+        <div class="appointment-list">
+
+            <div class="appointment-item">
+
+                <div class="patient-avatar">
+                    RK
+                </div>
+
+                <div class="patient-info">
+                    <h4>Rahul Kumar</h4>
+                    <p>Cardiology</p>
+                </div>
+
+                <div class="appointment-time">
+                    09:30 AM
+                </div>
+
+                <span class="status confirmed">
+                    Confirmed
+                </span>
+
+            </div>
+
+
+            <div class="appointment-item">
+
+                <div class="patient-avatar">
+                    PS
+                </div>
+
+                <div class="patient-info">
+                    <h4>Priya Shah</h4>
+                    <p>Neurology</p>
+                </div>
+
+                <div class="appointment-time">
+                    10:00 AM
+                </div>
+
+                <span class="status confirmed">
+                    Confirmed
+                </span>
+
+            </div>
+
+
+            <div class="appointment-item">
+
+                <div class="patient-avatar">
+                    AM
+                </div>
+
+                <div class="patient-info">
+                    <h4>Amit Mehta</h4>
+                    <p>Orthopedics</p>
+                </div>
+
+                <div class="appointment-time">
+                    10:30 AM
+                </div>
+
+                <span class="status pending">
+                    Pending
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-card">
+
+        <div class="card-header">
+
+            <h3>Hospital Activity</h3>
+
+            <i class="fa-solid fa-ellipsis"></i>
+
+        </div>
+
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-info">
+                    <p>New patient registered</p>
+                    <span>5 min ago</span>
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-info">
+                    <p>Appointment booked</p>
+                    <span>15 min ago</span>
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-info">
+                    <p>Doctor added</p>
+                    <span>30 min ago</span>
+                </div>
+
+            </div>
+
+
+            <div class="activity-item">
+
+                <div class="activity-dot"></div>
+
+                <div class="activity-info">
+                    <p>Patient record updated</p>
+                    <span>1 hour ago</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        
+
+
     </main>
 
 </div>
+<script src="admin_dashboard.js"></script>
 
 </body>
 
