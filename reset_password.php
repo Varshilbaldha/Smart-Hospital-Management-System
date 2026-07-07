@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 }
 
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -170,6 +170,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <title>Reset Password</title>
 
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -177,7 +180,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="reset-card">
 
-    <h1>Reset Password</h1>
+    <h1>
+        <i class="fa-solid fa-key"></i>
+        Reset Password
+    </h1>
 
     <p>
         Create a new password for your
@@ -202,30 +208,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form method="POST" action="">
 
+        <div class="password-box">
+            <label>New Password :</label>
 
-        <label>New Password</label>
-
-        <input
-            type="password"
-            name="password"
-            required>
-
-
-        <label>Confirm Password</label>
-
-        <input
-            type="password"
-            name="confirm_password"
-            required>
+            <input
+                type="password"
+                name="password"
+                required>
 
 
-        <button type="submit">
+            <label>Confirm Password :</label>
 
-            Reset Password
+            <input
+                type="password"
+                name="confirm_password"
+                required>
+
+
+            <button type="submit">
+
+                Reset Password
 
         </button>
 
-
+        </div>
     </form>
 
 </div>

@@ -27,7 +27,7 @@
 
 <form id="forgotForm">
 
-    <label>Application Number</label>
+    <label>Application Number :</label>
 
     <input
         type="text"
