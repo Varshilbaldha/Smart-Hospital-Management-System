@@ -12,11 +12,49 @@
 
     <link rel="stylesheet" href="index.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
+<header>
+
+    <nav class="navbar">
+
+        <!-- Logo -->
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>CarePlus</span>
+        </div>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-links">
+
+            <li><a href="#">Home</a></li>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#features">Features</a></li>
+
+            <li><a href="#hospitals">Hospitals</a></li>
+
+            <li><a href="#services">Services</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+        <!-- Login Buttons -->
+        <div class="nav-buttons">
+
+            <a href="hospital_registration.php" class="hospital-btn">
+                Register Your Hospital
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
 <body>
 
 
@@ -32,7 +70,7 @@
         </p>
 
     </div>
-
+    
 
     <div class="portals-container">
 
@@ -93,25 +131,6 @@
         </div>
 
 
-    </div>
-
-
-   
-
-    <div class="hospital-register">
-
-        <p style="font-weight: 5px; padding:25px; font-size: 15px; animation: fadeInUp 0.8s ease-out 0.4s both;">
-            New hospital joining CarePlus?
-     
-
-        <a href="hospital_registration.php">
-
-            Register Your Hospital
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-        </a>
-           </p>
     </div>
 
 
