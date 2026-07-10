@@ -1,17 +1,5 @@
 
 
-const sidebar = document.querySelector(".sidebar");
-
-const sidebarToggle =
-    document.getElementById("sidebarToggle");
-
-
-sidebarToggle.addEventListener("click", function()
-{
-
-    sidebar.classList.toggle("closed");
-
-});
 
 
 
@@ -22,7 +10,7 @@ const appointmentCanvas =
 new Chart(
     appointmentCanvas,
     {
-        type: "line",
+        type:"line",
 
         data:
         {
@@ -44,13 +32,13 @@ new Chart(
 
                     data:
                     [
-                        10,
-                        18,
-                        25,
-                        20,
-                        35,
-                        28,
-                        45
+                        250,
+                        254,
+                        278,
+                        202,
+                        354,
+                        288,
+                        248
                     ],
 
                     borderColor: "#635bff",
