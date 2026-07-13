@@ -14,6 +14,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>CarePlus</span>
+        </div>
+        <h1 style="text-align: center;">HOSPITAL LOGIN</h1>
+    </nav>
+    
+    
+</header>
 
 <body>
     <script>
@@ -57,10 +68,8 @@
             
             <div class="box">
 
-            <h2 style="text-align: center;">Login</h2><br>
 
-
-                <h3>Applicaton No : <input type="text" name="app" id="app" class="input"><br><Br>
+                <h3>Application No : <input type="text" name="app" id="app" class="input"><br><Br>
                     <p style="color:red;font-size:16px;margin-top:-2px;" id="msg1"></p>
                     
 
