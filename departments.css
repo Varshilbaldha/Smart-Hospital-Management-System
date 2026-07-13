@@ -1,0 +1,909 @@
+/* ==============================
+   PAGE CONTENT
+================================*/
+
+.main-content{
+    flex: 1;
+    padding: 30px;
+    background: #f5f7fb;
+    /* min-height: 100vh; */
+}
+
+
+/* ==============================
+   PAGE HEADER
+================================*/
+
+.page-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+    color:#1d2433;
+    font-weight:700;
+
+}
+
+.page-header p{
+
+    margin-top:6px;
+
+    color:#8a8fa3;
+
+    font-size:14px;
+
+}
+
+
+/* ==============================
+   ADD BUTTON
+================================*/
+
+.add-btn{
+
+    background:#6f52ed;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    background:#5b42d7;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(111,82,237,.25);
+
+}
+
+
+
+/* ==============================
+   STATISTICS
+================================*/
+
+.stats-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+
+
+/* ==============================
+   CARD
+================================*/
+
+.stat-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.08);
+
+}
+
+
+/* ==============================
+   ICON
+================================*/
+
+.stat-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:26px;
+
+}
+
+
+/* Purple */
+
+.purple{
+
+    background:#efe9ff;
+
+    color:#6f52ed;
+
+}
+
+
+/* Green */
+
+.green{
+
+    background:#e8fff2;
+
+    color:#20b56d;
+
+}
+
+
+/* Blue */
+
+.blue{
+
+    background:#eaf3ff;
+
+    color:#2f80ed;
+
+}
+
+
+/* Orange */
+
+.orange{
+
+    background:#fff3e8;
+
+    color:#ff7a00;
+
+}
+
+
+/* ==============================
+   TEXT
+================================*/
+
+.stat-card h4{
+
+    color:#7b8094;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.stat-card h2{
+
+    margin:6px 0;
+
+    font-size:32px;
+
+    color:#222;
+
+}
+
+.stat-card span{
+
+    color:#9aa1b4;
+
+    font-size:13px;
+
+}
+/*==================================
+        TOOLBAR
+==================================*/
+
+.department-toolbar{
+
+    margin-top:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+
+
+/*==================================
+        SEARCH BOX
+==================================*/
+
+.department-toolbar .search-box{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    height:52px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:0 18px;
+
+    border:1px solid #ececf4;
+
+    transition:.3s;
+
+}
+
+.department-toolbar .search-box:hover{
+
+    border-color:#6f52ed;
+
+}
+
+.department-toolbar .search-box i{
+
+    color:#9ea5b9;
+
+    font-size:14px;
+
+}
+
+.department-toolbar .search-box input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:14px;
+
+}
+
+
+
+/*==================================
+        STATUS
+==================================*/
+
+.status-filter{
+
+    width:180px;
+
+    height:52px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    border:1px solid #ececf4;
+
+    padding:0 18px;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+
+
+/*==================================
+        FILTER BUTTON
+==================================*/
+
+.filter-btn{
+
+    height:52px;
+
+    padding:0 24px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#6f52ed;
+
+    color:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.filter-btn:hover{
+
+    background:#5a41d7;
+
+    transform:translateY(-2px);
+
+}
+/*==================================
+        TABLE CONTAINER
+==================================*/
+
+.table-container{
+
+    margin-top:25px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+
+
+/*==================================
+        TABLE
+==================================*/
+
+.department-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+/*==================================
+        HEADER
+==================================*/
+
+.department-table thead{
+
+    background:#f7f5ff;
+
+}
+
+.department-table th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#555;
+
+    font-size:14px;
+
+}
+
+
+
+/*==================================
+        ROW
+==================================*/
+
+.department-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #eeeeee;
+
+    vertical-align:middle;
+
+}
+
+
+
+/*==================================
+        DEPARTMENT
+==================================*/
+
+.department-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.department-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#fff1f2;
+
+    color:#ff5a6b;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:18px;
+
+}
+
+.department-info h4{
+
+    font-size:15px;
+
+    margin-bottom:4px;
+
+}
+
+.department-info p{
+
+    color:#888;
+
+    font-size:13px;
+
+}
+
+
+
+/*==================================
+        COUNTS
+==================================*/
+
+.count{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.doctor-count{
+
+    background:#efe9ff;
+
+    color:#6f52ed;
+
+}
+
+.staff-count{
+
+    background:#eaf2ff;
+
+    color:#2f80ed;
+
+}
+
+
+
+/*==================================
+        STATUS
+==================================*/
+
+.status{
+
+    padding:6px 15px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.active{
+
+    background:#e8fff2;
+
+    color:#20b56d;
+
+}
+
+
+
+/*==================================
+        ACTION BUTTONS
+==================================*/
+
+.action-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.action-buttons button{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.action-buttons button:hover{
+
+    background:#6f52ed;
+
+    color:#fff;
+
+}
+/*==========================
+    ICON COLORS
+===========================*/
+
+.neuro{
+
+    background:#eef8ff;
+
+    color:#2f80ed;
+
+}
+
+.bone{
+
+    background:#fff5e8;
+
+    color:#ff8c00;
+
+}
+
+.child{
+
+    background:#fff0f6;
+
+    color:#ff5fa2;
+
+}
+
+.emergency{
+
+    background:#fff4e9;
+
+    color:#ff6d00;
+
+}
+
+
+/*==========================
+    STATUS
+===========================*/
+
+.status.inactive{
+
+    background:#ffe9ea;
+
+    color:#e63946;
+
+}
+
+
+/*==========================
+    FOOTER
+===========================*/
+
+.table-footer{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.table-footer p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+/*==========================
+    PAGINATION
+===========================*/
+
+.pagination{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.pagination button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.pagination button:hover{
+
+    background:#6f52ed;
+
+    color:#fff;
+
+}
+
+.active-page{
+
+    background:#6f52ed !important;
+
+    color:#fff;
+
+}
+/*=====================================
+        MODAL
+======================================*/
+
+.modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.modal{
+
+    width:520px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    animation:popup .25s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.close-modal{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    background:#f4f4f4;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+
+    width:100%;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:12px 15px;
+
+    outline:none;
+
+    font-size:14px;
+
+}
+
+.form-group textarea{
+
+    height:120px;
+
+    resize:none;
+
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.modal-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.cancel-btn{
+
+    background:#eee;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.save-btn{
+
+    background:#6f52ed;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
