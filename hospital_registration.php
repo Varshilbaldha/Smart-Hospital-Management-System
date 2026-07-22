@@ -13,7 +13,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <body>
 
 
-</div>
+
     <div class="Box1">
         <h2>Enter Your Valid Hospital Details</h2>
 
@@ -29,7 +29,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                     <div class="b1">
                         <label for="hname">Hospital Full Name <span style="color:red;">*</span>:</label>
                         <input type="text" id="hname" name="hname" class="input" placeholder="e.g. City Care Hospital"
-                            required>
+                             required>
                     </div>
 
                     <br>

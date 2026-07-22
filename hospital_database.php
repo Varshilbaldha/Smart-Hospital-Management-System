@@ -2,6 +2,7 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors',1);
+require 'create_hospital_database.php';
 
 $conn = mysqli_connect('localhost', 'Hospital_management', 'B@ldh@ V@rshil', 'hospital_management');
 
@@ -12,6 +13,7 @@ if (!$conn) {
     $hospital_name = $_SESSION['hospital_name'];
     $registration_no = $_SESSION['registration_no'];
     $application_no = $_SESSION['application_no'];
+    $database_name = createHospitalDatabase($application_no);
     $hospital_type = $_SESSION['hospital_type'];
 
     $hospital_email = $_SESSION['hospital_email'];
@@ -36,7 +38,7 @@ if (!$conn) {
     $license_doc = $_SESSION['license_doc'];
 
 
-    $query = "INSERT INTO hospital_registration (application_no,hospital_name, registration_no, hospital_type, hospital_email, hospital_phone, emergency_no, website, address1, address2, city, state, zip, admin_name, admin_username, admin_email, admin_mobile, password, license_doc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO hospital_registration (application_no,hospital_name, registration_no, hospital_type, hospital_email, hospital_phone, emergency_no, website, address1, address2, city, state, zip, admin_name, admin_username, admin_email, admin_mobile, password, license_doc,database_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $query);
 
@@ -44,8 +46,7 @@ if (!$conn) {
         die(mysqli_error($conn));
     }
 
-    mysqli_stmt_bind_param($stmt, "sssssssssssssssssss", $application_no ,$hospital_name,$registration_no,  $hospital_type, $hospital_email, $hospital_phone, $emergency_no, $website, $address1, $address2, $city, $state, $zip, $admin_name, $admin_username, $admin_email, $admin_mobile, $password, $license_doc);
-
+    mysqli_stmt_bind_param($stmt, "ssssssssssssssssssss", $application_no ,$hospital_name,$registration_no,  $hospital_type, $hospital_email, $hospital_phone, $emergency_no, $website, $address1, $address2, $city, $state, $zip, $admin_name, $admin_username, $admin_email, $admin_mobile, $password, $license_doc, $database_name);
 
 
     if (mysqli_stmt_execute($stmt)) {

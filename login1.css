@@ -135,6 +135,11 @@ body {
     box-shadow:0 8px 25px rgba(1, 85, 230, 0.31);
 
 }
+.login-error {
+    color: red;
+    font-size: 16px;
+    margin-top: -2px;
+}
 .forgotForm
 {
     font-size: small;
