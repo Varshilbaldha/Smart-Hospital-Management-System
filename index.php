@@ -74,9 +74,6 @@
 
     <div class="portals-container">
 
-
-        
-
         <div class="portal-card">
 
             <div class="icon">

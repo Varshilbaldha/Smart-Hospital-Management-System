@@ -9,13 +9,23 @@
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script src="hospital_registration.js"></script>
 </head>
-
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <span>CarePlus</span>
+        </div>
+        <h1 style="text-align: center;">HOSPITAL REGISTRATION</h1>
+    </nav>
+    
+    
+</header>
 <body>
 
 
 
     <div class="Box1">
-        <h2>Enter Your Valid Hospital Details</h2>
+        
 
         <form method="post" action="send_mail.php" onsubmit="return validation()" enctype="multipart/form-data">
 
@@ -159,14 +169,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                             placeholder="Re-Enter Password" required>
                     </div>
 
-
-
-
                 </div>
                 <div class="License Document">
+                    <h3 style="margin-left:5px; margin-bottom:10px">License</h3>
                     <label for="license_doc"> License Document <span style="color:red;">*</span> </label> <br><br>
                     <input type="file" id="license_doc" name="license_doc" class="input" accept=".pdf,.jpg,.jpeg,.png" required> <br>
-                    <small style="color:gray;"> Upload PDF, JPG, JPEG, or PNG (Maximum Size: 200 KB) </small> <br><br>
+                    <small style="color:gray;"> Accepted formats: PDF, JPG, JPEG, PNG (Maximum Size: 200 KB) </small> <br><br>
                     <input type="submit" value="Upload Document" class="submit-button">
                 </div>
                 <div class="b1">
