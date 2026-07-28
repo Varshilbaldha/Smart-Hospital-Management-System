@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    ...
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="departments.css">
 </head>
 
@@ -11,29 +13,11 @@
 <div class="dashboard">
 
     <?php require 'sidebar.php'; ?>
-    <?php require 'topbar.php'; ?>
+   
 
     <main class="main-content">
-        <header class="topbar">
 
-    <div></div>
-
-    <div class="top-icons">
-
-        <i class="fa-regular fa-bell"></i>
-
-        <i class="fa-regular fa-envelope"></i>
-
-        <div class="admin-small">
-
-            <i class="fa-solid fa-user"></i>
-
-        </div>
-
-    </div>
-
-    </header>
-
+             <?php require 'topbar.php'; ?>
     <!-- Page Header -->
 
     <div class="page-header">
@@ -153,9 +137,7 @@
     </div>
 
 
-<!-- =========================
-     Search & Filter
-========================== -->
+
 
 <div class="department-toolbar">
 
@@ -192,9 +174,7 @@
     </button>
 
 </div>
-<!-- =====================================
-        Department Table
-====================================== -->
+
 
 <div class="table-container">
 

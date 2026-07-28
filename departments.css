@@ -1,13 +1,20 @@
-/* ==============================
-   PAGE CONTENT
-================================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 .main-content{
-    flex: 1;
-    margin-left: 0;
-    padding: 30px;
-    background: #f5f7fb;
-    min-height: 100vh;
+    
+    
+    flex:1;
+
+    padding:30px;
+
+    background:#f5f7fb;
+
+    min-height:100vh;
 }
 
 
@@ -20,8 +27,29 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
+    
 
     margin-bottom:30px;
+
+}
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:240px;
+
+    height:100vh;
 
 }
 
@@ -44,9 +72,7 @@
 }
 
 
-/* ==============================
-   ADD BUTTON
-================================*/
+
 
 .add-btn{
 

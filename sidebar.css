@@ -7,6 +7,19 @@
 
     font-family: 'Poppins', sans-serif;
 }
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:240px;
+
+    height:100vh;
+
+}
 
 .hospital-logo{
     display: flex;

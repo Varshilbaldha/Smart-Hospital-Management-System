@@ -67,14 +67,9 @@ session_start();
 
             <div class="box">
 
-<<<<<<< HEAD
+
                 <h2 style="text-align: center;">Login</h2><br>      
-=======
-<<<<<<< HEAD
-                <h2 style="text-align: center;">Login</h2><br>      
-=======
->>>>>>> 15b0ec9d9bd0b49a06d2e003f3360b1de7aee451
->>>>>>> f2df80932735377a62e986feffbc2e9182eeef90
+
 
                 <h3>Application No : <input type="text" name="app" id="app" class="input"><br><Br>
                     <p style="color:red;font-size:16px;margin-top:-2px;" id="msg1"></p>
@@ -102,11 +97,9 @@ session_start();
 
                     <p class="forgotForm">
 
-<<<<<<< HEAD
+
                         <a href="forgot_password.php">Forgot Password?</a><br><br>
-=======
-                        <a href="forgot_password.php">Forgot Password</a><br><br>
->>>>>>> f2df80932735377a62e986feffbc2e9182eeef90
+
 
                     <p class="new-register">
                         New User?

@@ -1,20 +1,42 @@
-<header class="topbar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="topbar.css">   
+</head>
+<body>
+    <header class="topbar">
 
+    <!-- Search -->
     <div class="search-box">
 
         <i class="fa-solid fa-magnifying-glass"></i>
 
-        <input type="text" placeholder="Search anything...">
+        <input
+            type="search"
+            placeholder="Search anything..."
+            autocomplete="off">
 
     </div>
 
-    <div class="top-icons">
+    <!-- Right Section -->
+    <div class="top-right">
 
-        <i class="fa-regular fa-bell"></i>
+        <button class="icon-btn">
 
-        <i class="fa-regular fa-envelope"></i>
+            <i class="fa-regular fa-bell"></i>
 
-        <div class="admin-small">
+        </button>
+
+        <button class="icon-btn">
+
+            <i class="fa-regular fa-envelope"></i>
+
+        </button>
+
+        <div class="profile">
 
             <i class="fa-solid fa-user"></i>
 
@@ -23,3 +45,5 @@
     </div>
 
 </header>
+</body>
+</html>
