@@ -43,19 +43,17 @@ if (!$conn) {
                 header("Location: admin_dashboard.php");
                 exit();
             } else {
-                echo "<script>
-                        alert('Invalid Password');
-                        window.location='login.php';
-                        </script>";
+                $_SESSION['login_error'] = "Invalid password.";
+               header("Location: login.php");
+                exit();
             }
 
 
         } else {
 
-            echo "<script>
-                        alert('Invalid Application No');
-                        window.location='login.php';
-                        </script>";
+            $_SESSION['login_error'] = "Invalid application number.";
+            header("Location: login.php");
+            exit();
         }
     }
 }

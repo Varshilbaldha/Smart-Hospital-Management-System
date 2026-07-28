@@ -1,12 +1,38 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-require 'sidebar.php';
-// require 'auth.php';
-?>
+<head>
+    ...
+    <link rel="stylesheet" href="departments.css">
+</head>
 
-<link rel="stylesheet" href="departments.css">
-<div class="main-content">
+<body>
+
+<div class="dashboard">
+
+    <?php require 'sidebar.php'; ?>
+    <?php require 'topbar.php'; ?>
+
+    <main class="main-content">
+        <header class="topbar">
+
+    <div></div>
+
+    <div class="top-icons">
+
+        <i class="fa-regular fa-bell"></i>
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <div class="admin-small">
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+    </div>
+
+    </header>
 
     <!-- Page Header -->
 
@@ -126,7 +152,7 @@ require 'sidebar.php';
 
     </div>
 
-</div>
+
 <!-- =========================
      Search & Filter
 ========================== -->
@@ -730,4 +756,12 @@ require 'sidebar.php';
 </div>
 
 </div>
+
+</main>
+
+</div>
+
 <script src="departments.js"></script>
+
+</body>
+</html>
