@@ -145,9 +145,7 @@
 
         <i class="fa-solid fa-magnifying-glass"></i>
 
-        <input
-            type="text"
-            placeholder="Search department...">
+        <input type="text"  placeholder="Search department...">
 
     </div>
 

@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="staff.css">
 
-    <link rel="stylesheet" href="topbar.css">
+    
 
 </head>
 
@@ -23,11 +23,9 @@
 
     <main class="main-content">
 
-        <?php require 'topbar.php'; ?>
+         <?php require 'topbar.php'; ?>
 
-        <!-- ==========================
-                Page Header
-        =========================== -->
+      
 
         <div class="page-header">
 
