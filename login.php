@@ -90,7 +90,7 @@ session_start();
                         <p class="login-error">
                             <?= htmlspecialchars($_SESSION['login_error']) ?>
                         </p>
-                        <?php
+                         <?php
                         unset($_SESSION['login_error']);
                     }
                     ?>
