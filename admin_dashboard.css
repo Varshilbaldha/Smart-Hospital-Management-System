@@ -2,21 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body{
     font-family: Arial, sans-serif;
     background-color: #f7f8fc;
+    
 }
 
 .dashboard{
     display: flex;
     min-height: 100vh;
+    
 }
 
 .main-content{
     flex: 1;
     padding: 0 30px 30px;
+    
 }
 .hospital-logo{
     display: flex;
@@ -112,59 +116,10 @@ body{
 
     box-shadow: 0 5px 15px rgba(99,91,255,0.25);
 }
-.topbar{
-    height: 70px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    border-bottom: 1px solid #e8eaf2;
-}
-    
-.search-box i{
-    color: #9ba3b5;
-    font-size: 13px;
-}
 
-.search-box input{
-    width: 100%;
 
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    font-size: 13px;
-
-    color: #252a3d;
-}
-.search-box input::placeholder{
-    color: #a9afbd;
-}
-.search-box:focus-within{
-    border-color: #635bff;
-
-    box-shadow: 0 0 0 3px rgba(99,91,255,0.08);
-}
-.search-box{
-    width: 300px;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 0 15px;
-
-    background-color: white;
-
-    border: 1px solid #e5e7ef;
-
-    border-radius: 8px;
-
-    transition: 0.3s;
-}
 .top-icons{
     display: flex;
     align-items: center;
@@ -213,7 +168,7 @@ body{
 }
 
 .welcome h1{
-    font-size: 24px;
+    font-size: 30px;
 
     color: #1d2235;
 

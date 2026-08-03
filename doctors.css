@@ -180,31 +180,67 @@
 }
 
 .card-icon{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 20px;
     color: #fff;
 }
 
+.stat-icon{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:30%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:20px;
+
+}
+
 .purple{
-    background: #6C63FF;
+
+    background:#efe9ff;
+
+    color:#6f52ed;
+
 }
 
 .green{
-    background: #22c55e;
+
+    background:#e8fff2;
+
+    color:#20b56d;
+
 }
 
 .blue{
-    background: #3b82f6;
+
+    background:#eaf3ff;
+
+    color:#2f80ed;
+
 }
 
 .orange{
-    background: #f59e0b;
+
+    background:#fff3e8;
+
+    color:#ff7a00;
+
 }
+
+
 
 .stat-card p{
     margin: 0;
@@ -213,9 +249,13 @@
 }
 
 .stat-card h2{
-    margin: 8px 0;
-    font-size: 28px;
-    color: #1e293b;
+
+    margin:6px 0;
+
+    font-size:25px;
+
+    color: lightblue;
+
 }
 
 .stat-card span{

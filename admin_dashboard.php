@@ -37,9 +37,6 @@
         <main class="main-content">
 
 
-           <?php require 'topbar.php'; ?>
-
-
             <section class="welcome">
 
                 <h1>Dashboard</h1>

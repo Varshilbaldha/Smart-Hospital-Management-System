@@ -15,7 +15,6 @@
 <?php require 'sidebar.php'; ?>
 
 <main class="main-content">
-    <?php require 'topbar.php'; ?>
 
     <!-- ==========================
             Page Header

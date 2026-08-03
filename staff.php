@@ -23,7 +23,6 @@
 
     <main class="main-content">
 
-         <?php require 'topbar.php'; ?>
 
       
 
@@ -79,7 +78,7 @@
 
         <div class="stat-icon active">
 
-            <i class="fa-solid fa-shield-check"></i>
+            <i class="fa-solid fa-user-check"></i>
 
         </div>
 

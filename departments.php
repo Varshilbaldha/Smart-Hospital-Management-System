@@ -16,8 +16,7 @@
    
 
     <main class="main-content">
-
-             <?php require 'topbar.php'; ?>
+        
     <!-- Page Header -->
 
     <div class="page-header">
