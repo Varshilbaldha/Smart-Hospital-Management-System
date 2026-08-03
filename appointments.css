@@ -58,7 +58,7 @@
 
 
 /* ==========================
-   Add Patient Button
+   Add Appointment Button
 ========================== */
 
 .add-btn{
@@ -143,7 +143,7 @@
 
 
 /* ==========================
-   Stat Icons
+   Icons
 ========================== */
 
 .stat-icon{
@@ -165,7 +165,7 @@
 }
 
 
-/* Total Patients */
+/* Total */
 
 .stat-icon.total{
 
@@ -176,29 +176,7 @@
 }
 
 
-/* Admitted Patients */
-
-.stat-icon.admitted{
-
-    background:#e8fff2;
-
-    color:#20b56d;
-
-}
-
-
-/* Discharged */
-
-.stat-icon.discharged{
-
-    background:#fff3e8;
-
-    color:#ff7a00;
-
-}
-
-
-/* Today's Registration */
+/* Today's */
 
 .stat-icon.today{
 
@@ -209,8 +187,30 @@
 }
 
 
+/* Completed */
+
+.stat-icon.completed{
+
+    background:#e8fff2;
+
+    color:#20b56d;
+
+}
+
+
+/* Pending */
+
+.stat-icon.pending{
+
+    background:#fff3e8;
+
+    color:#ff7a00;
+
+}
+
+
 /* ==========================
-   Stat Text
+   Card Text
 ========================== */
 
 .stat-info h4{
@@ -276,7 +276,7 @@
    Search Box
 ========================== */
 
-.patient-search-box{
+.appointment-search-box{
 
     display:flex;
 
@@ -298,7 +298,7 @@
 
 }
 
-.patient-search-box i{
+.appointment-search-box i{
 
     color:#94a3b8;
 
@@ -306,7 +306,7 @@
 
 }
 
-.patient-search-box input{
+.appointment-search-box input{
 
     width:100%;
 
@@ -320,7 +320,7 @@
 
 }
 
-.patient-search-box input::placeholder{
+.appointment-search-box input::placeholder{
 
     color:#94a3b8;
 
@@ -331,7 +331,7 @@
    Filter Box
 ========================== */
 
-.patient-filter-box{
+.appointment-filter-box{
 
     display:flex;
 
@@ -351,7 +351,7 @@
 
 }
 
-.patient-filter-box i{
+.appointment-filter-box i{
 
     color:#94a3b8;
 
@@ -359,7 +359,7 @@
 
 }
 
-.patient-filter-box select{
+.appointment-filter-box select{
 
     width:100%;
 
@@ -380,7 +380,7 @@
    Filter Button
 ========================== */
 
-.patient-filter-btn{
+.appointment-filter-btn{
 
     height:48px;
 
@@ -402,13 +402,13 @@
 
 }
 
-.patient-filter-btn i{
+.appointment-filter-btn i{
 
     margin-right:8px;
 
 }
 
-.patient-filter-btn:hover{
+.appointment-filter-btn:hover{
 
     background:#574ee8;
 
@@ -540,6 +540,41 @@ tbody tr:hover{
 
 
 /* ==========================
+   Appointment Type
+========================== */
+
+.type{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.type.online{
+
+    background:#DBEAFE;
+
+    color:#2563EB;
+
+}
+
+.type.offline{
+
+    background:#F3E8FF;
+
+    color:#7C3AED;
+
+}
+
+
+/* ==========================
    Status
 ========================== */
 
@@ -557,7 +592,15 @@ tbody tr:hover{
 
 }
 
-.status.admitted{
+.status.pending{
+
+    background:#FEF3C7;
+
+    color:#D97706;
+
+}
+
+.status.confirmed{
 
     background:#DCFCE7;
 
@@ -565,7 +608,15 @@ tbody tr:hover{
 
 }
 
-.status.discharged{
+.status.completed{
+
+    background:#DBEAFE;
+
+    color:#2563EB;
+
+}
+
+.status.cancelled{
 
     background:#FEE2E2;
 
@@ -786,7 +837,7 @@ tbody tr:hover{
    Form
 ========================== */
 
-#patientForm{
+#appointmentForm{
 
     padding:25px;
 
@@ -934,19 +985,19 @@ tbody tr:hover{
 
     }
 
-    .patient-search-box{
+    .appointment-search-box{
 
         width:100%;
 
     }
 
-    .patient-filter-box{
+    .appointment-filter-box{
 
         width:100%;
 
     }
 
-    .patient-filter-btn{
+    .appointment-filter-btn{
 
         width:100%;
 
@@ -983,7 +1034,7 @@ tbody tr:hover{
 
     table{
 
-        min-width:1100px;
+        min-width:1200px;
 
     }
 
