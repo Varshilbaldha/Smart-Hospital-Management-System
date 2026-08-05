@@ -39,7 +39,7 @@ href="assets/css/register.css">
         </p>
 
         <form
-        action="register_process.php"
+        action="patient_registration.php"
         method="POST"
         id="registerForm">
 
