@@ -231,7 +231,7 @@ body{
 }
 
 .stat-card:hover{
-    transform: translateY(-14px);
+    transform: translateY(-14px);   
 
     box-shadow: 0 10px 25px rgba(20, 30, 70, 0.08);
       background: linear-gradient(
@@ -240,9 +240,6 @@ body{
         #18244d
     );
 
-}
-.staic-card:hover h2{
-    color: white;
 }
 
 .stat-card:active
@@ -363,7 +360,7 @@ body{
 .card-header i{
     color: #9ba3b5;
 
-    font-size: 13px;
+    font-size: 13px;    
 
     cursor: pointer;
 }

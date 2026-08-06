@@ -14,37 +14,18 @@ new Chart(
 
         data:
         {
-            labels:
-            [
-                "Mon",
-                "Tue",
-                "Wed",
-                "Thu",
-                "Fri",
-                "Sat",
-                "Sun"
-            ],
+            labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
 
             datasets:
             [
                 {
                     label: "Appointments",
 
-                    data:
-                    [
-                        250,
-                        254,
-                        278,
-                        202,
-                        354,
-                        288,
-                        248
-                    ],
+                    data: [250,254,278,202,354,288,248],
 
                     borderColor: "#635bff",
 
-                    backgroundColor:
-                        "rgba(99, 91, 255, 0.12)",
+                    backgroundColor: "rgba(99, 91, 255, 0.12)",
 
                     fill: true,
 
@@ -60,8 +41,6 @@ new Chart(
         options:
         {
             responsive: true,
-
-            maintainAspectRatio: false,
 
             plugins:
             {
@@ -96,8 +75,7 @@ new Chart(
 );
 
 
-const departmentCanvas =
-    document.getElementById("departmentChart");
+const departmentCanvas = document.getElementById("departmentChart");
 
 
 new Chart(
@@ -107,26 +85,12 @@ new Chart(
 
         data:
         {
-            labels:
-            [
-                "Cardiology",
-                "Orthopedics",
-                "Neurology",
-                "Pediatrics",
-                "Others"
-            ],
+            labels: ["Cardiology","Orthopedics","Neurology","Pediatrics","Others"],
 
             datasets:
             [
                 {
-                    data:
-                    [
-                        30,
-                        25,
-                        20,
-                        15,
-                        10
-                    ],
+                    data: [30,25,20,15,10],
 
                     backgroundColor:
                     [
