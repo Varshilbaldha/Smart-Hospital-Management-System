@@ -137,6 +137,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                     <h3 style="margin-left:5px; margin-bottom:10px">Administrator Information</h3>
 
                     <div class="b1">
+                        
                         <label for="adminname">Full Name <span style="color:red;">*</span>:</label>
                         <input type="text" id="adminname" name="adminname" class="input"
                             placeholder="e.g. Varshil Baldha" required>
