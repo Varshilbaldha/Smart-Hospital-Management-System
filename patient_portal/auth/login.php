@@ -1,14 +1,14 @@
 <?php
 
-require_once "../includes/config.php";
+// require_once "../includes/config.php";
 
-/* If already logged in */
+// /* If already logged in */
 
-if (isset($_SESSION['patient']))
-{
-    header("Location: dashboard.php");
-    exit();
-}
+// if (isset($_SESSION['patient']))
+// {
+//     header("Location: dashboard.php");
+//     exit();
+// }
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ if (isset($_SESSION['patient']))
 
                 <label>
 
-                    Email / Mobile
+                    Email / Mobile :
 
                 </label>
 
@@ -72,7 +72,7 @@ if (isset($_SESSION['patient']))
 
                 <label>
 
-                    Password
+                    Password :
 
                 </label>
 

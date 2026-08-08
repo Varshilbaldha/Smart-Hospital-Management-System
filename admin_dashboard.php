@@ -25,8 +25,6 @@ require 'auth.php';
 </head>
 
 
-
-
 <body>
 
 

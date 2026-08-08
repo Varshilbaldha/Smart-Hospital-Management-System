@@ -132,6 +132,19 @@
     transition:.3s;
 
 }
+.stat-card:hover{
+
+    transform: translateY(-14px);
+
+    box-shadow: 0 10px 25px rgba(20, 30, 70, 0.08);
+
+    background: linear-gradient(
+        180deg,
+        #111936,
+        #18244d
+    );
+
+}
 
 .stat-card:hover{
 
@@ -140,6 +153,7 @@
     box-shadow:0 10px 25px rgba(0,0,0,.12);
 
 }
+
 
 
 /* ==========================
