@@ -42,6 +42,8 @@ new Chart(
         {
             responsive: true,
 
+            maintainAspectRatio: false,
+
             plugins:
             {
                 legend:
