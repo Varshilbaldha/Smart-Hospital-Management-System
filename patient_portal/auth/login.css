@@ -216,7 +216,7 @@ body{
           Links
 =========================== */
 
-.login-card a{
+.forgot{
 
     color:#364fc7;
 
@@ -225,6 +225,27 @@ body{
     font-size:14px;
 
     transition:.3s;
+
+    margin-left: 230px;
+
+    text-decoration: underline;
+
+}
+.newacc{
+
+    color:#364fc7;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:.3s;
+
+    font-style:normal;
+
+    font-weight:400;
+
+    text-decoration:underline;
 
 }
 

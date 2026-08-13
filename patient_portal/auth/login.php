@@ -119,7 +119,7 @@
 
         <br>
 
-        <a href="forgot_password.php">
+        <a class="forgot" href="forgot_password.php">
 
             Forgot Password?
 
@@ -127,7 +127,7 @@
 
         <br><br>
 
-        <a href="register.php">
+        <a class="newacc" href="register.php">
 
             Create New Account
 
