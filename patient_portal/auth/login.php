@@ -158,6 +158,9 @@ unset($_SESSION['success']);
         <br>
 
 
+        <a class="forgot" href="forgot_password.php">
+
+
         <!-- Password -->
 
         <div>
@@ -174,6 +177,9 @@ unset($_SESSION['success']);
                 autocomplete="current-password"
                 placeholder="Enter Password"
             >
+
+        <a class="newacc" href="register.php">
+
 
         </div>
 

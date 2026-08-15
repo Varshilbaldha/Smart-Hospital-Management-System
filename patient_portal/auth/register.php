@@ -15,8 +15,7 @@ Patient Registration
 
 </title>
 
-<link
-rel="stylesheet" href="register.css">
+<link rel="stylesheet" href="register1.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
 </head>
@@ -38,109 +37,115 @@ rel="stylesheet" href="register.css">
         </p>
 
         <form
-        action="patient_registration.php"
-        method="POST"
-        id="registerForm">
+    action="patient_registration.php"
+    method="POST"
+    id="registerForm">
 
-            <div class="input-group">
+    <!-- CARD 1 -->
+    <div class="form-card">
 
-                <label>
+        <div class="input-group">
 
-                    First Name
+            <label>
+                First Name :
+            </label>
 
-                </label>
-
-                <input
+            <input
                 type="text"
                 name="first_name"
                 id="first_name">
 
-            </div>
+        </div>
 
-            <div class="input-group">
+        <div class="input-group">
 
-                <label>
+            <label>
+                Last Name :
+            </label>
 
-                    Last Name
-
-                </label>
-
-                <input
+            <input
                 type="text"
                 name="last_name"
                 id="last_name">
 
-            </div>
+        </div>
 
-            <div class="input-group">
+    </div>
 
-                <label>
 
-                    Mobile Number
+    <!-- CARD 2 -->
+    <div class="form-card">
 
-                </label>
+        <div class="input-group">
 
-                <input
+            <label>
+                Mobile Number :
+            </label>
+
+            <input
                 type="text"
                 name="mobile"
                 id="mobile">
 
-            </div>
+        </div>
 
-            <div class="input-group">
+        <div class="input-group">
 
-                <label>
+            <label>
+                Email :
+            </label>
 
-                    Email
-
-                </label>
-
-                <input
+            <input
                 type="email"
                 name="email"
                 id="email">
 
-            </div>
+        </div>
 
-            <div class="input-group">
+    </div>
 
-                <label>
 
-                    Password
+    <!-- CARD 3 -->
+    <div class="form-card">
 
-                </label>
+        <div class="input-group">
 
-                <input
+            <label>
+                Password :
+            </label>
+
+            <input
                 type="password"
                 name="password"
                 id="password">
 
-            </div>
+        </div>
 
-            <div class="input-group">
+        <div class="input-group">
 
-                <label>
+            <label>
+                Confirm Password :
+            </label>
 
-                    Confirm Password
-
-                </label>
-
-                <input
+            <input
                 type="password"
                 name="confirm_password"
                 id="confirm_password">
 
-            </div>
+        </div>
 
-            <button
-            type="submit"
-            class="register-btn">
+    </div>
 
-                Register
 
-            </button>
+    <button
+        type="submit"
+        class="register-btn">
 
-        </form>
+        Register
+
+    </button>
+
+</form>
 
         <div class="login-link">
 
