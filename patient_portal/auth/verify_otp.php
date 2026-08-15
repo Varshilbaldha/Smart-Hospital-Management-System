@@ -1,25 +1,75 @@
 <?php
 
-require_once "../includes/config.php";
+declare(strict_types=1);
 
-if (!isset($_SESSION['patient_registration']))
+
+/*====================================================
+    LOAD GLOBAL CONFIG
+====================================================*/
+
+require_once dirname(__DIR__, 2) . '/includes/config.php';
+
+
+/*====================================================
+    CHECK REGISTRATION SESSION
+====================================================*/
+
+if (
+    !isset($_SESSION['patient_registration']) ||
+    !is_array($_SESSION['patient_registration'])
+)
 {
-    header("Location: register.php");
-    exit();
+    $_SESSION['error'] =
+        "Registration session expired. Please register again.";
+
+    redirect("patient_registration.php");
 }
 
-$remaining_time =
-$_SESSION['patient_registration']['otp_expiry_time'] - time();
+
+/*====================================================
+    CHECK OTP EXPIRY TIME
+====================================================*/
+
+$otp_expiry_time =
+    (int) (
+        $_SESSION['patient_registration']['otp_expiry_time']
+        ?? 0
+    );
+
+
+$remaining_time = 0;
+
+
+if ($otp_expiry_time > time())
+{
+    $remaining_time =
+        $otp_expiry_time - time();
+}
+
+
+/*====================================================
+    IF OTP ALREADY EXPIRED
+====================================================*/
 
 if ($remaining_time <= 0)
 {
-    unset($_SESSION['patient_registration']);
-
-    die("OTP has expired. Please register again.");
+    $_SESSION['error'] =
+        "Your OTP has expired. Please request a new OTP.";
 }
 
+
+/*====================================================
+    PATIENT EMAIL
+====================================================*/
+
+$patient_email =
+    $_SESSION['patient_registration']['email']
+    ?? '';
+
 ?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -27,125 +77,223 @@ if ($remaining_time <= 0)
     <meta charset="UTF-8">
 
     <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Verify OTP</title>
+    <title>
+        Verify OTP
+    </title>
+
 
     <link
-    rel="stylesheet"
-    href="assets/css/verify_otp.css">
+        rel="stylesheet"
+        href="../assets/css/verify_otp.css"
+    >
 
 </head>
 
+
 <body>
 
-<div class="container">
 
-    <div class="otp-card">
+<div class="otp-card">
 
-        <h2>
+
+    <!--================================================
+        TITLE
+    =================================================-->
+
+    <h2>
+        Verify OTP
+    </h2>
+
+
+    <!--================================================
+        DESCRIPTION
+    =================================================-->
+
+    <p>
+
+        We have sent a 6-digit OTP to
+
+        <br>
+
+        <strong>
+
+            <?= htmlspecialchars(
+                $patient_email,
+                ENT_QUOTES,
+                'UTF-8'
+            ); ?>
+
+        </strong>
+
+    </p>
+
+
+    <!--================================================
+        ERROR MESSAGE
+    =================================================-->
+
+    <?php if (isset($_SESSION['error'])): ?>
+
+        <div class="otp-error">
+
+            <?= htmlspecialchars(
+                $_SESSION['error'],
+                ENT_QUOTES,
+                'UTF-8'
+            ); ?>
+
+        </div>
+
+        <?php unset($_SESSION['error']); ?>
+
+    <?php endif; ?>
+
+
+    <!--================================================
+        SUCCESS MESSAGE
+    =================================================-->
+
+    <?php if (isset($_SESSION['success'])): ?>
+
+        <div class="otp-success">
+
+            <?= htmlspecialchars(
+                $_SESSION['success'],
+                ENT_QUOTES,
+                'UTF-8'
+            ); ?>
+
+        </div>
+
+        <?php unset($_SESSION['success']); ?>
+
+    <?php endif; ?>
+
+
+    <!--================================================
+        OTP FORM
+    =================================================-->
+
+    <form
+        action="verify_otp_process.php"
+        method="POST"
+    >
+
+
+        <label for="otp">
+
+            Enter OTP
+
+        </label>
+
+
+        <input
+            type="text"
+            id="otp"
+            name="otp"
+            maxlength="6"
+            minlength="6"
+            pattern="[0-9]{6}"
+            inputmode="numeric"
+            autocomplete="one-time-code"
+            required
+            placeholder="Enter 6-digit OTP"
+        >
+
+
+        <br>
+        <br>
+
+
+        <button
+            type="submit"
+        >
 
             Verify OTP
 
-        </h2>
+        </button>
 
-        <p>
 
-            We have sent a 6-digit OTP to
+    </form>
 
-            <br>
 
-            <strong>
+    <!--================================================
+        OTP TIMER
+    =================================================-->
 
-                <?php
-                echo htmlspecialchars(
-                    $_SESSION['patient_registration']['email']
-                );
-                ?>
+    <br>
 
-            </strong>
+    <p>
 
-        </p>
+        OTP expires in
 
-        <form
-        action="verify_otp_process.php"
-        method="POST">
+        <span id="timer">
 
-            <input
+            <?= $remaining_time; ?>
 
-                type="text"
+        </span>
 
-                name="otp"
+        seconds
 
-                maxlength="6"
+    </p>
 
-                minlength="6"
 
-                required
+    <!--================================================
+        RESEND OTP
+    =================================================-->
 
-                placeholder="Enter OTP"
+    <br>
 
-            >
+    <a href="resend_otp.php">
 
-            <br><br>
+        Resend OTP
 
-            <button type="submit">
+    </a>
 
-                Verify OTP
-
-            </button>
-
-        </form>
-
-        <br>
-
-        <p>
-
-            OTP expires in
-
-            <span id="timer">
-
-                <?php echo $remaining_time; ?>
-
-            </span>
-
-            seconds
-
-        </p>
-
-        <br>
-
-        <a href="resend_otp.php">
-
-            Resend OTP
-
-        </a>
-
-    </div>
 
 </div>
 
+
+<!--====================================================
+    OTP TIMER SCRIPT
+=====================================================-->
+
 <script>
 
-let time =
-<?php echo $remaining_time; ?>;
+let remainingTime =
+    <?= (int) $remaining_time; ?>;
 
-const timer =
-document.getElementById("timer");
+const timerElement =
+    document.getElementById("timer");
 
-setInterval(function(){
 
-    if(time>0)
+const timer = setInterval(function ()
+{
+
+    if (remainingTime <= 0)
     {
-        time--;
+        clearInterval(timer);
 
-        timer.innerHTML=time;
+        timerElement.textContent = "Expired";
+
+        return;
     }
 
-},1000);
+
+    timerElement.textContent =
+        remainingTime;
+
+
+    remainingTime--;
+
+}, 1000);
 
 </script>
+
 
 </body>
 

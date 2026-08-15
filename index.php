@@ -90,7 +90,7 @@
                 one centralized healthcare platform.
             </p>
 
-            <a href="#"
+            <a href="patient_portal\auth\login.php"
                class="portal-btn btn-primary">
 
                 Patient Login

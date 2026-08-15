@@ -2,36 +2,36 @@
 
 declare(strict_types=1);
 
-/*
-|--------------------------------------------------------------------------
-| Patient Authentication Check
-|--------------------------------------------------------------------------
-|
-| This file protects all patient pages.
-| If patient is not logged in,
-| redirect to Login page.
-|
-*/
 
-require_once "../../includes/config.php";
-require_once "../../includes/functions.php";
+/*====================================================
+    GLOBAL CONFIG
+====================================================*/
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'config.php';
 
 
 /*====================================================
-    CHECK PATIENT LOGIN
+    CHECK LOGIN SESSION
 ====================================================*/
 
 if (
-    !isset($_SESSION['patient_auth'])
-    ||
-    !isset($_SESSION['patient_auth']['logged_in'])
-    ||
-    $_SESSION['patient_auth']['logged_in'] !== true
-)
-{
-    $_SESSION['error'] = "Please login to continue.";
+    !isset($_SESSION['patient_auth']) ||
+    !is_array($_SESSION['patient_auth']) ||
+    ($_SESSION['patient_auth']['logged_in'] ?? false) !== true
+) {
 
-    redirect("../login.php");
+    $_SESSION['error'] =
+        "Please login first.";
+
+    header(
+        "Location: /Hospital_Management_System/patient_portal/auth/login.php"
+    );
+
+    exit;
 }
 
 
@@ -39,49 +39,46 @@ if (
     SESSION TIMEOUT
 ====================================================*/
 
-$session_timeout = 60 * 60 * 2; // 2 Hours
+$timeout = 1800; // 30 minutes
 
-if
-(
-    isset($_SESSION['patient_auth']['login_time'])
-)
-{
 
-    if
-    (
-        (time() - $_SESSION['patient_auth']['login_time'])
-        >
-        $session_timeout
-    )
-    {
+$last_activity =
+    (int) (
+        $_SESSION['patient_auth']['last_activity']
+        ?? 0
+    );
 
-        session_unset();
 
-        session_destroy();
+if (
+    $last_activity <= 0 ||
+    (time() - $last_activity) > $timeout
+) {
 
-        session_start();
+    session_unset();
 
-        $_SESSION['error'] =
-        "Session expired. Please login again.";
+    session_destroy();
 
-        redirect("../patient_portal/login.php");
+    header(
+        "Location: /Hospital_Management_System/patient_portal/auth/login.php"
+    );
 
-    }
-
+    exit;
 }
 
 
 /*====================================================
-    REFRESH LOGIN TIME
+    UPDATE LAST ACTIVITY
 ====================================================*/
 
-$_SESSION['patient_auth']['login_time'] = time();
+$_SESSION['patient_auth']['last_activity'] =
+    time();
 
 
 /*====================================================
-    CURRENT PATIENT
+    MAKE PATIENT DATA AVAILABLE
 ====================================================*/
 
-$patient = $_SESSION['patient_auth'];
+$patient =
+    $_SESSION['patient_auth'];
 
 ?>

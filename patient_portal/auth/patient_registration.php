@@ -1,9 +1,36 @@
 <?php
 
-require_once "../includes/config.php";
-require_once "../includes/functions.php";
-require_once "../includes/validation.php";
-require_once "../includes/mail.php";
+declare(strict_types=1);
+
+/*
+|--------------------------------------------------------------------------
+| Global Includes
+|--------------------------------------------------------------------------
+*/
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'config.php';
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'functions.php';
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'validation.php';
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'mail.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST")

@@ -1,17 +1,45 @@
 <?php
 
-// require_once "../includes/config.php";
+declare(strict_types=1);
 
-// /* If already logged in */
 
-// if (isset($_SESSION['patient']))
-// {
-//     header("Location: dashboard.php");
-//     exit();
-// }
+/*====================================================
+    GLOBAL CONFIG
+====================================================*/
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'config.php';
+
+
+require_once dirname(__DIR__, 2)
+    . DIRECTORY_SEPARATOR
+    . 'includes'
+    . DIRECTORY_SEPARATOR
+    . 'functions.php';
+
+
+/*====================================================
+    FLASH MESSAGES
+====================================================*/
+
+$error =
+    $_SESSION['error'] ?? '';
+
+$success =
+    $_SESSION['success'] ?? '';
+
+
+unset($_SESSION['error']);
+
+unset($_SESSION['success']);
 
 ?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -20,122 +48,202 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Patient Login</title>
+    <title>
+        Patient Login
+    </title>
 
-    <link rel="stylesheet" href="login.css">
+    <link
+        rel="stylesheet"
+        href="login.css"
+    >
 
 </head>
 
 <body>
 
-<div class="login-container">
 
-    <div class="login-card">
+<div class="login-card">
 
-        <h2>Patient Login</h2>
 
-        <p>
-            Login using your Email Address or Mobile Number.
-        </p>
+    <!--================================================
+        TITLE
+    =================================================-->
 
-        <form
-            action="login_process.php"
-            method="POST">
+    <h2>
+        Patient Login
+    </h2>
 
-            <div>
 
-                <label>
+    <p>
+        Login using your Email Address or Mobile Number.
+    </p>
 
-                    Email / Mobile :
 
-                </label>
+    <!--================================================
+        ERROR MESSAGE
+    =================================================-->
 
-                <input
+    <?php if ($error !== ''): ?>
 
-                    type="text"
+        <div class="login-error">
 
-                    name="login_id"
+            <?= htmlspecialchars(
+                $error,
+                ENT_QUOTES,
+                'UTF-8'
+            ); ?>
 
-                    required
+        </div>
 
-                    placeholder="Email or Mobile Number"
+    <?php endif; ?>
 
-                >
 
-            </div>
+    <!--================================================
+        SUCCESS MESSAGE
+    =================================================-->
 
-            <br>
+    <?php if ($success !== ''): ?>
 
-            <div>
+        <div class="login-success">
 
-                <label>
+            <?= htmlspecialchars(
+                $success,
+                ENT_QUOTES,
+                'UTF-8'
+            ); ?>
 
-                    Password :
+        </div>
 
-                </label>
+    <?php endif; ?>
 
-                <input
 
-                    type="password"
+    <!--================================================
+        LOGIN FORM
+    =================================================-->
 
-                    name="password"
+    <form
+        action="login_process.php"
+        method="POST"
+    >
 
-                    required
 
-                    placeholder="Enter Password"
+        <!-- Email / Mobile -->
 
-                >
+        <div>
 
-            </div>
+            <label for="login_id">
+                Email / Mobile:
+            </label>
 
-            <br>
+            <input
+                type="text"
+                id="login_id"
+                name="login_id"
+                required
+                autocomplete="username"
+                placeholder="Email or Mobile Number"
+                value="<?= htmlspecialchars(
+                    $_POST['login_id'] ?? '',
+                    ENT_QUOTES,
+                    'UTF-8'
+                ); ?>"
+            >
 
-            <div>
+        </div>
 
-                <label>
-
-                    <input
-                        type="checkbox"
-                        name="remember_me">
-
-                    Remember Me
-
-                </label>
-
-            </div>
-
-            <br>
-
-            <button
-                type="submit">
-
-                Login
-
-            </button>
-
-        </form>
 
         <br>
 
-        <a href="forgot_password.php">
 
-            Forgot Password?
+        <!-- Password -->
 
-        </a>
+        <div>
 
-        <br><br>
+            <label for="password">
+                Password:
+            </label>
 
-        <a href="register.php">
+            <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                autocomplete="current-password"
+                placeholder="Enter Password"
+            >
 
-            Create New Account
+        </div>
 
-        </a>
 
-    </div>
+        <br>
+
+
+        <!-- Remember Me -->
+
+        <div>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    name="remember_me"
+                    value="1"
+                >
+
+                Remember Me
+
+            </label>
+
+        </div>
+
+
+        <br>
+
+
+        <!-- Login Button -->
+
+        <button
+            type="submit"
+        >
+
+            Login
+
+        </button>
+
+
+    </form>
+
+
+    <br>
+
+
+    <!-- Forgot Password -->
+
+    <a href="forgot_password.php">
+
+        Forgot Password?
+
+    </a>
+
+
+    <br>
+    <br>
+
+
+    <!-- Registration -->
+
+    <a href="patient_registration.php">
+
+        Create New Account
+
+    </a>
+
 
 </div>
+
 
 </body>
 
